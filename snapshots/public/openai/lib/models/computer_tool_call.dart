@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// A tool call to a computer use tool. See the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';/// A tool call to a computer use tool. See the
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 /// 
 @immutable final class ComputerToolCall {const ComputerToolCall({required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.type = 'computer_call', this.action, this.actions, });
@@ -13,7 +13,7 @@ factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerTo
   action: json['action'] != null ? ComputerAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   actions: (json['actions'] as List<dynamic>?)?.map((e) => ComputerAction.fromJson(e as Map<String, dynamic>)).toList(),
   pendingSafetyChecks: (json['pending_safety_checks'] as List<dynamic>).map((e) => ComputerCallSafetyCheckParam.fromJson(e as Map<String, dynamic>)).toList(),
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
 ); }
 
 /// The type of the computer call. Always `computer_call`.
@@ -40,7 +40,7 @@ final List<ComputerCallSafetyCheckParam> pendingSafetyChecks;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('pending_safety_checks') &&
       json.containsKey('status'); } 
-ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ComputerToolCall(
+ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ComputerToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

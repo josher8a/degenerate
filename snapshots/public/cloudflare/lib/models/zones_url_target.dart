@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesUrlTarget
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_string_constraint.dart';/// URL target.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_url_target/constraint.dart';/// URL target.
 @immutable final class ZonesUrlTarget {const ZonesUrlTarget({this.constraint, this.target, });
 
 factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarget(
-  constraint: json['constraint'] != null ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>) : null,
+  constraint: json['constraint'] != null ? Constraint.fromJson(json['constraint'] as Map<String, dynamic>) : null,
   target: json['target'],
 ); }
 
 /// The constraint of a target.
-final ZonesStringConstraint? constraint;
+final Constraint? constraint;
 
 /// A target based on the URL of the request.
 /// 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'target': ?target,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'constraint', 'target'}.contains(key)); } 
-ZonesUrlTarget copyWith({ZonesStringConstraint? Function()? constraint, dynamic Function()? target, }) { return ZonesUrlTarget(
+ZonesUrlTarget copyWith({Constraint? Function()? constraint, dynamic Function()? target, }) { return ZonesUrlTarget(
   constraint: constraint != null ? constraint() : this.constraint,
   target: target != null ? target() : this.target,
 ); } 

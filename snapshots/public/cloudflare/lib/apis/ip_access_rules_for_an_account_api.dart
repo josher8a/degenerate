@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "IpAccessRulesForAnAccountApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_create_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_delete_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_get_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_list_ip_access_rules_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_update_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/firewall_account_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule_identifier.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_rule.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_create_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_configuration_target.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_direction.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_match.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_order.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';/// IpAccessRulesForAnAccountApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_create_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_delete_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_get_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_list_ip_access_rules_error.dart';import 'package:pub_cloudflare/models/errors/ip_access_rules_for_an_account_update_an_ip_access_rule_error.dart';import 'package:pub_cloudflare/models/firewall_account_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule_identifier.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_rule.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_create_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_configuration_target.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_direction.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_match.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_an_account_list_ip_access_rules_order.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';/// IpAccessRulesForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class IpAccessRulesForAnAccountApi with ApiExecutor {const IpAccessRulesFo
 /// Fetches IP Access rules of an account. These rules apply to all the zones in the account. You can filter the results using several optional parameters.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<List<Map<String, dynamic>>?, IpAccessRulesForAnAccountListIpAccessRulesError>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallSchemasRule>, IpAccessRulesForAnAccountListIpAccessRulesError>> ipAccessRulesForAnAccountListIpAccessRules({required FirewallAccountIdentifier accountId, FirewallSchemasMode? mode, IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAnAccountListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAnAccountListIpAccessRulesOrder? order, IpAccessRulesForAnAccountListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -59,7 +59,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
+    return (json['result'] as List<dynamic>).map((e) => FirewallSchemasRule.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: IpAccessRulesForAnAccountListIpAccessRulesError.fromResponse,
 );
@@ -71,7 +71,7 @@ return execute(
 /// Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
 ///
 /// `POST /accounts/{account_id}/firewall/access_rules/rules`
-Future<ApiResult<ResponseCommon31Result, IpAccessRulesForAnAccountCreateAnIpAccessRuleError>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountCreateAnIpAccessRuleError>> ipAccessRulesForAnAccountCreateAnIpAccessRule({required FirewallAccountIdentifier accountId, required IpAccessRulesForAnAccountCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,7 +86,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return FirewallSchemasRule.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAnAccountCreateAnIpAccessRuleError.fromResponse,
 );
@@ -96,7 +96,7 @@ return execute(
 /// Fetches the details of an IP Access rule defined at the account level.
 ///
 /// `GET /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31Result, IpAccessRulesForAnAccountGetAnIpAccessRuleError>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountGetAnIpAccessRuleError>> ipAccessRulesForAnAccountGetAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -109,7 +109,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return FirewallSchemasRule.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAnAccountGetAnIpAccessRuleError.fromResponse,
 );
@@ -121,7 +121,7 @@ return execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `PATCH /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31Result, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallSchemasRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallSchemasRule, IpAccessRulesForAnAccountUpdateAnIpAccessRuleError>> ipAccessRulesForAnAccountUpdateAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, required FirewallSchemasRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,7 +136,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return FirewallSchemasRule.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: IpAccessRulesForAnAccountUpdateAnIpAccessRuleError.fromResponse,
 );
@@ -148,7 +148,7 @@ return execute(
 /// Note: This operation will affect all zones in the account.
 ///
 /// `DELETE /accounts/{account_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<ResponseCommon31Result, IpAccessRulesForAnAccountDeleteAnIpAccessRuleError>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, IpAccessRulesForAnAccountDeleteAnIpAccessRuleError>> ipAccessRulesForAnAccountDeleteAnIpAccessRule({required FirewallRuleIdentifier ruleId, required FirewallAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -161,7 +161,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: IpAccessRulesForAnAccountDeleteAnIpAccessRuleError.fromResponse,
 );

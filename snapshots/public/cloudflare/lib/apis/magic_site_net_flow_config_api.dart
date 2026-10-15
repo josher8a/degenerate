@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicSiteNetFlowConfigApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_account_apps_add_app_error.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_netflow_config_request.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// MagicSiteNetFlowConfigApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_account_apps_add_app_error.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_netflow_config.dart';import 'package:pub_cloudflare/models/magic_netflow_config_request.dart';/// MagicSiteNetFlowConfigApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MagicSiteNetFlowConfigApi with ApiExecutor {const MagicSiteNetFlowCo
 /// Get NetFlow configuration for a site.
 ///
 /// `GET /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDetails({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Creates a NetFlow configuration for a site.
 ///
 /// `POST /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigCreateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// Updates NetFlow configuration for a site (partial update).
 ///
 /// `PUT /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigUpdateNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -87,7 +87,7 @@ return execute(
 /// Updates NetFlow configuration for a site.
 ///
 /// `PATCH /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigPatchNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, required MagicNetflowConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,7 +102,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );
@@ -112,7 +112,7 @@ return execute(
 /// Remove NetFlow configuration for a site.
 ///
 /// `DELETE /accounts/{account_id}/magic/sites/{site_id}/netflow_config`
-Future<ApiResult<ResponseCommon33Result, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicNetflowConfig, MagicAccountAppsAddAppError>> magicSiteNetflowConfigDeleteNetflowConfig({required MagicIdentifier accountId, required MagicIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,7 +125,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicAccountAppsAddAppError.fromResponse,
 );

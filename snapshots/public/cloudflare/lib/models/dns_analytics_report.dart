@@ -1,0 +1,83 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsReport
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_query.dart';import 'package:pub_cloudflare/models/dns_analytics_report/dns_analytics_report_data.dart';@immutable final class DnsAnalyticsReport {const DnsAnalyticsReport({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
+
+factory DnsAnalyticsReport.fromJson(Map<String, dynamic> json) { return DnsAnalyticsReport(
+  data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsReportData.fromJson(e as Map<String, dynamic>)).toList(),
+  dataLag: (json['data_lag'] as num).toDouble(),
+  max: json['max'] as Map<String, dynamic>,
+  min: json['min'] as Map<String, dynamic>,
+  query: DnsAnalyticsQuery.fromJson(json['query'] as Map<String, dynamic>),
+  rows: (json['rows'] as num).toDouble(),
+  totals: json['totals'] as Map<String, dynamic>,
+); }
+
+final List<DnsAnalyticsReportData> data;
+
+/// Number of seconds between current time and last processed event, in another words how many seconds of data could be missing.
+/// 
+/// Example: `60`
+final double dataLag;
+
+/// Maximum results for each metric (object mapping metric names to values). Currently always an empty object.
+final Map<String,dynamic> max;
+
+/// Minimum results for each metric (object mapping metric names to values). Currently always an empty object.
+final Map<String,dynamic> min;
+
+final DnsAnalyticsQuery query;
+
+/// Total number of rows in the result.
+/// 
+/// Example: `100`
+final double rows;
+
+/// Total results for metrics across all data (object mapping metric names to values).
+final Map<String,dynamic> totals;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+  'data_lag': dataLag,
+  'max': max,
+  'min': min,
+  'query': query.toJson(),
+  'rows': rows,
+  'totals': totals,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+      json.containsKey('data_lag') && json['data_lag'] is num &&
+      json.containsKey('max') &&
+      json.containsKey('min') &&
+      json.containsKey('query') &&
+      json.containsKey('rows') && json['rows'] is num &&
+      json.containsKey('totals'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (dataLag < 0) { errors.add('dataLag: must be >= 0'); }
+if (rows < 0) { errors.add('rows: must be >= 0'); }
+return errors; } 
+DnsAnalyticsReport copyWith({List<DnsAnalyticsReportData>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsQuery? query, double? rows, Map<String,dynamic>? totals, }) { return DnsAnalyticsReport(
+  data: data ?? this.data,
+  dataLag: dataLag ?? this.dataLag,
+  max: max ?? this.max,
+  min: min ?? this.min,
+  query: query ?? this.query,
+  rows: rows ?? this.rows,
+  totals: totals ?? this.totals,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is DnsAnalyticsReport &&
+          listEquals(data, other.data) &&
+          dataLag == other.dataLag &&
+          max == other.max &&
+          min == other.min &&
+          query == other.query &&
+          rows == other.rows &&
+          totals == other.totals;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals);
+
+@override String toString() => 'DnsAnalyticsReport(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals)';
+
+ }

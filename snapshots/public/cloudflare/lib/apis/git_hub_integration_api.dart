@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "GitHubIntegrationApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_provider_account_id.dart';import 'package:pub_cloudflare/models/builds_repo_id.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';/// GitHubIntegrationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_config_autofill_response.dart';import 'package:pub_cloudflare/models/builds_provider_account_id.dart';import 'package:pub_cloudflare/models/builds_repo_id.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';/// GitHubIntegrationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class GitHubIntegrationApi with ApiExecutor {const GitHubIntegrationApi(th
 /// Analyze repository for automatic configuration detection
 ///
 /// `GET /accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill`
-Future<ApiResult<Map<String, dynamic>?, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BuildsConfigAutofillResponse, Never>> getWorkerConfigAutofill({required BuildsAccountId accountId, required BuildsScmProviderType providerType, required BuildsProviderAccountId providerAccountId, required BuildsRepoId repoId, required BuildsBranch branch, BuildsRootDirectory? rootDirectory, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['branch'] = branch.toJson();
 if (rootDirectory != null) {
@@ -36,7 +36,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsConfigAutofillResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

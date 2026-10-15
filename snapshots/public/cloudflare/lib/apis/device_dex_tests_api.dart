@@ -14,7 +14,7 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<List<dynamic>?, DeviceDexTestDetailsError>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsError>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -44,7 +44,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => e).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DeviceDexTestDetailsError.fromResponse,
 );

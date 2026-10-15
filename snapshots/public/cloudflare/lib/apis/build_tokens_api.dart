@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "BuildTokensApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_create_build_token_request.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// BuildTokensApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_create_build_token_request.dart';import 'package:pub_cloudflare/models/builds_create_build_token_response.dart';import 'package:pub_cloudflare/models/builds_list_tokens_response.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// BuildTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class BuildTokensApi with ApiExecutor {const BuildTokensApi(this.apiConfig
 /// Get all build tokens with pagination
 ///
 /// `GET /accounts/{account_id}/builds/tokens`
-Future<ApiResult<Map<String, dynamic>?, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BuildsListTokensResponse>, Never>> listBuildTokens({required BuildsAccountId accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -38,7 +38,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return (json['result'] as List<dynamic>).map((e) => BuildsListTokensResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -47,7 +47,7 @@ return execute(
 /// Create a new build authentication token
 ///
 /// `POST /accounts/{account_id}/builds/tokens`
-Future<ApiResult<Map<String, dynamic>?, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsCreateBuildTokenResponse, Never>> createBuildToken({required BuildsAccountId accountId, required BuildsCreateBuildTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +62,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsCreateBuildTokenResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

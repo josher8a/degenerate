@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_collection28.dart';import 'package:pub_cloudflare/models/response_common_failure49.dart';/// Variants:
-/// - `.a` → [ResponseCollection28]
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import 'package:pub_cloudflare/models/response_common_failure49.dart';/// Variants:
+/// - `.a` → [MagicVisibilityPcapsPcapsOwnershipCollection]
 /// - `.b` → [ResponseCommonFailure49]
-typedef MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault = OneOf2<ResponseCollection28,ResponseCommonFailure49>;
+typedef MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault = OneOf2<MagicVisibilityPcapsPcapsOwnershipCollection,ResponseCommonFailure49>;

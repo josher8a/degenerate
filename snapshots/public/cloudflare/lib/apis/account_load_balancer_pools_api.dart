@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccountLoadBalancerPoolsApi" (10 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_create_pool_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_patch_pool_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_patch_pools_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_update_pool_request.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_create_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_delete_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_list_pool_references_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_list_pools_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_patch_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_patch_pools_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_pool_details_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_pool_health_details_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_preview_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_update_pool_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_editable.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_pool.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';import 'package:pub_cloudflare/models/response_single30/response_single30_result.dart';/// AccountLoadBalancerPoolsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_create_pool_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_patch_pool_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_patch_pools_request.dart';import 'package:pub_cloudflare/models/account_load_balancer_pools_update_pool_request.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_create_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_delete_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_list_pool_references_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_list_pools_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_patch_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_patch_pools_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_pool_details_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_pool_health_details_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_preview_pool_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_pools_update_pool_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_health_details/load_balancing_health_details_result.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_editable.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_pool.dart';import 'package:pub_cloudflare/models/load_balancing_preview_response/load_balancing_preview_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_identifier.dart';/// AccountLoadBalancerPoolsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -45,7 +45,7 @@ return execute(
 /// Create a new pool.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsCreatePoolError>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsCreatePoolError>> accountLoadBalancerPoolsCreatePool({required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsCreatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -60,7 +60,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsCreatePoolError.fromResponse,
 );
@@ -95,7 +95,7 @@ return execute(
 /// Fetch a single configured pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsPoolDetailsError>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPoolDetailsError>> accountLoadBalancerPoolsPoolDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,7 +108,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsPoolDetailsError.fromResponse,
 );
@@ -118,7 +118,7 @@ return execute(
 /// Modify a configured pool.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsUpdatePoolError>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsUpdatePoolError>> accountLoadBalancerPoolsUpdatePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsUpdatePoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,7 +133,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsUpdatePoolError.fromResponse,
 );
@@ -143,7 +143,7 @@ return execute(
 /// Apply changes to an existing pool, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsPatchPoolError>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPool, AccountLoadBalancerPoolsPatchPoolError>> accountLoadBalancerPoolsPatchPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required AccountLoadBalancerPoolsPatchPoolRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,7 +158,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsPatchPoolError.fromResponse,
 );
@@ -168,7 +168,7 @@ return execute(
 /// Delete a configured pool.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/pools/{pool_id}`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsDeletePoolError>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, AccountLoadBalancerPoolsDeletePoolError>> accountLoadBalancerPoolsDeletePool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -181,7 +181,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsDeletePoolError.fromResponse,
 );
@@ -191,7 +191,7 @@ return execute(
 /// Fetch the latest pool health status for a single pool.
 ///
 /// `GET /accounts/{account_id}/load_balancers/pools/{pool_id}/health`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsPoolHealthDetailsError>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingHealthDetailsResult, AccountLoadBalancerPoolsPoolHealthDetailsError>> accountLoadBalancerPoolsPoolHealthDetails({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -204,7 +204,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingHealthDetailsResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsPoolHealthDetailsError.fromResponse,
 );
@@ -214,7 +214,7 @@ return execute(
 /// Preview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /accounts/{account_id}/load_balancers/pools/{pool_id}/preview`
-Future<ApiResult<ResponseSingle30Result, AccountLoadBalancerPoolsPreviewPoolError>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResponseResult, AccountLoadBalancerPoolsPreviewPoolError>> accountLoadBalancerPoolsPreviewPool({required LoadBalancingSchemasIdentifier poolId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -229,7 +229,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: AccountLoadBalancerPoolsPreviewPoolError.fromResponse,
 );

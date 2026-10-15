@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "RepositoryConnectionsApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_repo_connection_uuid.dart';import 'package:pub_cloudflare/models/builds_upsert_repo_connection_request.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// RepositoryConnectionsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_repo_connection_uuid.dart';import 'package:pub_cloudflare/models/builds_upsert_repo_connection_request.dart';import 'package:pub_cloudflare/models/builds_upsert_repo_connection_response.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// RepositoryConnectionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class RepositoryConnectionsApi with ApiExecutor {const RepositoryConnectio
 /// Upsert a repository connection for CI/CD integration
 ///
 /// `PUT /accounts/{account_id}/builds/repos/connections`
-Future<ApiResult<Map<String, dynamic>?, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BuildsUpsertRepoConnectionResponse, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,7 +29,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return BuildsUpsertRepoConnectionResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

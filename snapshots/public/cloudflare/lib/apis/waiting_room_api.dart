@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WaitingRoomApi" (24 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_a_custom_waiting_room_page_preview_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_event_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_get_waiting_room_status_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_get_zone_settings_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_events_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_room_rules_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_rooms_account_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_rooms_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_zone_settings_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_preview_active_event_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_replace_waiting_room_rules_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_zone_settings_error.dart';import 'package:pub_cloudflare/models/response_single56/response_single56_result.dart';import 'package:pub_cloudflare/models/waitingroom_create_rule.dart';import 'package:pub_cloudflare/models/waitingroom_event_id.dart';import 'package:pub_cloudflare/models/waitingroom_event_result.dart';import 'package:pub_cloudflare/models/waitingroom_identifier.dart';import 'package:pub_cloudflare/models/waitingroom_patch_rule.dart';import 'package:pub_cloudflare/models/waitingroom_query_event.dart';import 'package:pub_cloudflare/models/waitingroom_query_preview.dart';import 'package:pub_cloudflare/models/waitingroom_query_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_rule_id.dart';import 'package:pub_cloudflare/models/waitingroom_rule_result.dart';import 'package:pub_cloudflare/models/waitingroom_waiting_room_id.dart';import 'package:pub_cloudflare/models/waitingroom_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings.dart';/// WaitingRoomApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_a_custom_waiting_room_page_preview_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_create_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_delete_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_event_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_get_waiting_room_status_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_get_zone_settings_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_events_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_room_rules_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_rooms_account_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_list_waiting_rooms_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_waiting_room_rule_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_patch_zone_settings_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_preview_active_event_details_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_replace_waiting_room_rules_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_event_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_waiting_room_error.dart';import 'package:pub_cloudflare/models/errors/waiting_room_update_zone_settings_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_create_rule.dart';import 'package:pub_cloudflare/models/waitingroom_event_details_result.dart';import 'package:pub_cloudflare/models/waitingroom_event_id.dart';import 'package:pub_cloudflare/models/waitingroom_event_result.dart';import 'package:pub_cloudflare/models/waitingroom_identifier.dart';import 'package:pub_cloudflare/models/waitingroom_patch_rule.dart';import 'package:pub_cloudflare/models/waitingroom_preview_response/waitingroom_preview_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_query_event.dart';import 'package:pub_cloudflare/models/waitingroom_query_preview.dart';import 'package:pub_cloudflare/models/waitingroom_query_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_rule_id.dart';import 'package:pub_cloudflare/models/waitingroom_rule_result.dart';import 'package:pub_cloudflare/models/waitingroom_status_response/waitingroom_status_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_waiting_room_id.dart';import 'package:pub_cloudflare/models/waitingroom_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings_response/waitingroom_zone_settings_response_result.dart';/// WaitingRoomApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -82,7 +82,7 @@ return execute(
 /// Creates a new waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomCreateWaitingRoomError>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomCreateWaitingRoomError>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,7 +97,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomCreateWaitingRoomError.fromResponse,
 );
@@ -107,7 +107,7 @@ return execute(
 /// Fetches a single configured waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomDetailsError>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomDetailsError>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -120,7 +120,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomDetailsError.fromResponse,
 );
@@ -130,7 +130,7 @@ return execute(
 /// Updates a configured waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomUpdateWaitingRoomError>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomUpdateWaitingRoomError>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,7 +145,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomUpdateWaitingRoomError.fromResponse,
 );
@@ -155,7 +155,7 @@ return execute(
 /// Patches a configured waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomPatchWaitingRoomError>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomPatchWaitingRoomError>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -170,7 +170,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomPatchWaitingRoomError.fromResponse,
 );
@@ -180,7 +180,7 @@ return execute(
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomDeleteWaitingRoomError>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, WaitingRoomDeleteWaitingRoomError>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -193,7 +193,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomDeleteWaitingRoomError.fromResponse,
 );
@@ -237,7 +237,7 @@ return execute(
 /// Only available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomCreateEventError>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomCreateEventError>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -252,7 +252,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomCreateEventError.fromResponse,
 );
@@ -262,7 +262,7 @@ return execute(
 /// Fetches a single configured event for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomEventDetailsError>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomEventDetailsError>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -275,7 +275,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomEventDetailsError.fromResponse,
 );
@@ -285,7 +285,7 @@ return execute(
 /// Updates a configured event for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomUpdateEventError>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomUpdateEventError>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -300,7 +300,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomUpdateEventError.fromResponse,
 );
@@ -310,7 +310,7 @@ return execute(
 /// Patches a configured event for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomPatchEventError>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomPatchEventError>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -325,7 +325,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomPatchEventError.fromResponse,
 );
@@ -335,7 +335,7 @@ return execute(
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomDeleteEventError>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult, WaitingRoomDeleteEventError>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -348,7 +348,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomDeleteEventError.fromResponse,
 );
@@ -358,7 +358,7 @@ return execute(
 /// Previews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomPreviewActiveEventDetailsError>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventDetailsResult, WaitingRoomPreviewActiveEventDetailsError>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -371,7 +371,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomEventDetailsResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomPreviewActiveEventDetailsError.fromResponse,
 );
@@ -511,7 +511,7 @@ return execute(
 /// 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/status`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomGetWaitingRoomStatusError>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomStatusResponseResult, WaitingRoomGetWaitingRoomStatusError>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -524,7 +524,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomGetWaitingRoomStatusError.fromResponse,
 );
@@ -551,7 +551,7 @@ return execute(
 /// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomCreateACustomWaitingRoomPagePreviewError>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomPreviewResponseResult, WaitingRoomCreateACustomWaitingRoomPagePreviewError>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -566,7 +566,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomCreateACustomWaitingRoomPagePreviewError.fromResponse,
 );
@@ -574,7 +574,7 @@ return execute(
 /// Get zone-level Waiting Room settings
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomGetZoneSettingsError>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomGetZoneSettingsError>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -587,7 +587,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomGetZoneSettingsError.fromResponse,
 );
@@ -595,7 +595,7 @@ return execute(
 /// Update zone-level Waiting Room settings
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomUpdateZoneSettingsError>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomUpdateZoneSettingsError>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -610,7 +610,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomUpdateZoneSettingsError.fromResponse,
 );
@@ -618,7 +618,7 @@ return execute(
 /// Patch zone-level Waiting Room settings
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<ResponseSingle56Result, WaitingRoomPatchZoneSettingsError>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomPatchZoneSettingsError>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -633,7 +633,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, greedy: const {0},);
+    return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: WaitingRoomPatchZoneSettingsError.fromResponse,
 );

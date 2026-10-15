@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItemFunctionCallOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';/// A function call output item in a Realtime conversation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';/// A function call output item in a Realtime conversation.
 @immutable final class RealtimeConversationItemFunctionCallOutput {const RealtimeConversationItemFunctionCallOutput({required this.type, required this.callId, required this.output, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCallOutput(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   callId: json['call_id'] as String,
   output: json['output'] as String,
 ); }
@@ -23,7 +23,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 /// The ID of the function call this output is for.
 final String callId;
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-RealtimeConversationItemFunctionCallOutput copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
+RealtimeConversationItemFunctionCallOutput copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

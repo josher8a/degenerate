@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecondaryDnsPrimaryZoneApi" (8 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_create_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_delete_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_disable_outgoing_zone_transfers_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_enable_outgoing_zone_transfers_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_force_dns_notify_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_get_outgoing_zone_transfer_status_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_primary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_update_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/rum_rule_id_response_single/rum_rule_id_response_single_result.dart';import 'package:pub_cloudflare/models/secondary_dns_disable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_enable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_single_request_outgoing.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_outgoing/secondary_dns_single_response_outgoing_result.dart';/// SecondaryDnsPrimaryZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_create_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_delete_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_disable_outgoing_zone_transfers_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_enable_outgoing_zone_transfers_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_force_dns_notify_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_get_outgoing_zone_transfer_status_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_primary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_primary_zone_update_primary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_disable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_enable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_single_request_outgoing.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_outgoing/secondary_dns_single_response_outgoing_result.dart';/// SecondaryDnsPrimaryZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -87,7 +87,7 @@ return execute(
 /// Delete primary zone configuration for outgoing zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<RumRuleIdResponseSingleResult?, SecondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationError>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationError>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? RumRuleIdResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: SecondaryDnsPrimaryZoneDeletePrimaryZoneConfigurationError.fromResponse,
 );

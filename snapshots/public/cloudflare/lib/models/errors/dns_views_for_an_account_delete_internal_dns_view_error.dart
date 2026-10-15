@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure31.dart';sealed class DnsViewsForAnAccountDeleteInternalDnsViewError {const DnsViewsForAnAccountDeleteInternalDnsViewError();
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_views_for_an_account_delete_internal_dns_view_response4_xx.dart';sealed class DnsViewsForAnAccountDeleteInternalDnsViewError {const DnsViewsForAnAccountDeleteInternalDnsViewError();
 
 factory DnsViewsForAnAccountDeleteInternalDnsViewError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
-        _ when response.statusCode >= 400 && response.statusCode <= 499 => DnsViewsForAnAccountDeleteInternalDnsViewError$4XX(ResponseCommonFailure31.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => DnsViewsForAnAccountDeleteInternalDnsViewError$4XX(DnsViewsForAnAccountDeleteInternalDnsViewResponse4Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => DnsViewsForAnAccountDeleteInternalDnsViewError$Unknown(response.statusCode, response.body),
       };
     } on Object {
@@ -17,7 +17,7 @@ Object? get typedError => null;
  }
 final class DnsViewsForAnAccountDeleteInternalDnsViewError$4XX extends DnsViewsForAnAccountDeleteInternalDnsViewError {const DnsViewsForAnAccountDeleteInternalDnsViewError$4XX(this.error, this.statusCode, );
 
-final ResponseCommonFailure31 error;
+final DnsViewsForAnAccountDeleteInternalDnsViewResponse4Xx error;
 
 @override final int statusCode;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItemMessageSystem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';/// The role of the message sender. Always `system`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';/// The role of the message sender. Always `system`.
 sealed class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole();
 
 factory RealtimeConversationItemMessageSystemRole.fromJson(String json) { return switch (json) {
@@ -61,7 +61,7 @@ factory RealtimeConversationItemMessageSystem.fromJson(Map<String, dynamic> json
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageSystemRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageSystemContent.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -76,7 +76,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 /// The role of the message sender. Always `system`.
 final RealtimeConversationItemMessageSystemRole role;
@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageSystem copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputStatus? Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessageSystem(
+RealtimeConversationItemMessageSystem copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessageSystem(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

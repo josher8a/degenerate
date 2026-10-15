@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OutputMessage
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/message_phase.dart';import 'package:pub_openai/models/output_message_content.dart';/// An output message from the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/message_phase.dart';import 'package:pub_openai/models/output_message_content.dart';/// An output message from the model.
 /// 
 @immutable final class OutputMessage {const OutputMessage({required this.id, required this.type, required this.role, required this.content, required this.status, this.phase, });
 
@@ -11,7 +11,7 @@ factory OutputMessage.fromJson(Map<String, dynamic> json) { return OutputMessage
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => OutputMessageContent.fromJson(e as Map<String, dynamic>)).toList(),
   phase: json['phase'] != null ? MessagePhase.fromJson(json['phase'] as String) : null,
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
 ); }
 
 /// The unique ID of the output message.
@@ -39,7 +39,7 @@ final MessagePhase? phase;
 /// The status of the message input. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when input items are returned via API.
 /// 
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('role') &&
       json.containsKey('content') &&
       json.containsKey('status'); } 
-OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputStatus? status, }) { return OutputMessage(
+OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputResourceStatus? status, }) { return OutputMessage(
   id: id ?? this.id,
   type: type ?? this.type,
   role: role ?? this.role,

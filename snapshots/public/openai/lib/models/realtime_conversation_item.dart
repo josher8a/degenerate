@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call_output.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant/realtime_conversation_item_message_assistant_content.dart';import 'package:pub_openai/models/realtime_mcp_approval_request.dart';import 'package:pub_openai/models/realtime_mcp_approval_response.dart';import 'package:pub_openai/models/realtime_mcp_list_tools.dart';import 'package:pub_openai/models/realtime_mcp_tool_call.dart';import 'package:pub_openai/models/realtime_mcp_tool_call/realtime_mcp_tool_call_error.dart';sealed class RealtimeConversationItemType {const RealtimeConversationItemType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call_output.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant/realtime_conversation_item_message_assistant_content.dart';import 'package:pub_openai/models/realtime_mcp_approval_request.dart';import 'package:pub_openai/models/realtime_mcp_approval_response.dart';import 'package:pub_openai/models/realtime_mcp_list_tools.dart';import 'package:pub_openai/models/realtime_mcp_tool_call.dart';import 'package:pub_openai/models/realtime_mcp_tool_call/realtime_mcp_tool_call_error.dart';sealed class RealtimeConversationItemType {const RealtimeConversationItemType();
 
 factory RealtimeConversationItemType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -140,13 +140,13 @@ factory RealtimeConversationItem.fromJson(Map<String, dynamic> json) { return sw
 }; }
 
 /// Build the `message` variant.
-factory RealtimeConversationItem.message({required ChatCompletionResponseMessageRole role, required List<RealtimeConversationItemMessageAssistantContent> content, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
+factory RealtimeConversationItem.message({required ChatCompletionResponseMessageRole role, required List<RealtimeConversationItemMessageAssistantContent> content, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputResourceStatus? status, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
 
 /// Build the `function_call` variant.
-factory RealtimeConversationItem.functionCall({required String name, required String arguments, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, String? callId, }) { return RealtimeConversationItemFunctionCall$Variant(RealtimeConversationItemFunctionCall(type: 'function_call', id: id, object: object, status: status, callId: callId, name: name, arguments: arguments)); }
+factory RealtimeConversationItem.functionCall({required String name, required String arguments, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputResourceStatus? status, String? callId, }) { return RealtimeConversationItemFunctionCall$Variant(RealtimeConversationItemFunctionCall(type: 'function_call', id: id, object: object, status: status, callId: callId, name: name, arguments: arguments)); }
 
 /// Build the `function_call_output` variant.
-factory RealtimeConversationItem.functionCallOutput({required String callId, required String output, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemFunctionCallOutput$Variant(RealtimeConversationItemFunctionCallOutput(type: 'function_call_output', id: id, object: object, status: status, callId: callId, output: output)); }
+factory RealtimeConversationItem.functionCallOutput({required String callId, required String output, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputResourceStatus? status, }) { return RealtimeConversationItemFunctionCallOutput$Variant(RealtimeConversationItemFunctionCallOutput(type: 'function_call_output', id: id, object: object, status: status, callId: callId, output: output)); }
 
 /// Build the `mcp_approval_response` variant.
 factory RealtimeConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return RealtimeConversationItemMcpApprovalResponse(RealtimeMcpApprovalResponse(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
@@ -189,7 +189,7 @@ final RealtimeConversationItemMessageAssistant realtimeConversationItemMessageAs
 
 @override Map<String, dynamic> toJson() => {...realtimeConversationItemMessageAssistant.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
+RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
   id: id,
   object: object,
   status: status,
@@ -216,7 +216,7 @@ final RealtimeConversationItemFunctionCall realtimeConversationItemFunctionCall;
 
 @override Map<String, dynamic> toJson() => {...realtimeConversationItemFunctionCall.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall$Variant(realtimeConversationItemFunctionCall.copyWith(
+RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, String? Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall$Variant(realtimeConversationItemFunctionCall.copyWith(
   id: id,
   object: object,
   status: status,
@@ -244,7 +244,7 @@ final RealtimeConversationItemFunctionCallOutput realtimeConversationItemFunctio
 
 @override Map<String, dynamic> toJson() => {...realtimeConversationItemFunctionCallOutput.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(realtimeConversationItemFunctionCallOutput.copyWith(
+RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(realtimeConversationItemFunctionCallOutput.copyWith(
   id: id,
   object: object,
   status: status,

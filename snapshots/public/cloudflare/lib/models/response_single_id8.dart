@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseSingleId8
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';@immutable final class ResponseSingleId8 {const ResponseSingleId8({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';@immutable final class ResponseSingleId8 {const ResponseSingleId8({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId8.fromJson(Map<String, dynamic> json) { return ResponseSingleId8(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<ZonesMessages2> errors;
@@ -19,7 +19,7 @@ final List<ZonesMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final ResponseSingleId5Result? result;
+final ResponseSingleId3Result? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingleId8 copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, bool? success, ResponseSingleId5Result? Function()? result, }) { return ResponseSingleId8(
+ResponseSingleId8 copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? messages, bool? success, ResponseSingleId3Result? Function()? result, }) { return ResponseSingleId8(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ListsApi" (11 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/lists_create_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_create_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_delete_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_delete_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_a_list_item_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_bulk_operation_status_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_lists_error.dart';import 'package:pub_cloudflare/models/errors/lists_update_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_update_all_list_items_error.dart';import 'package:pub_cloudflare/models/lists_account_id.dart';import 'package:pub_cloudflare/models/lists_create_a_list_request.dart';import 'package:pub_cloudflare/models/lists_delete_list_items_request.dart';import 'package:pub_cloudflare/models/lists_item.dart';import 'package:pub_cloudflare/models/lists_item_id.dart';import 'package:pub_cloudflare/models/lists_items_update_request_collection2.dart';import 'package:pub_cloudflare/models/lists_list_id.dart';import 'package:pub_cloudflare/models/lists_list_item_asn_full.dart';import 'package:pub_cloudflare/models/lists_list_item_hostname_full.dart';import 'package:pub_cloudflare/models/lists_list_item_ip_full.dart';import 'package:pub_cloudflare/models/lists_list_item_redirect_full.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';import 'package:pub_cloudflare/models/lists_update_a_list_request.dart';import 'package:pub_cloudflare/models/response_common41/response_common41_result.dart';/// ListsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/lists_create_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_create_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_delete_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_delete_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_a_list_item_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_bulk_operation_status_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_list_items_error.dart';import 'package:pub_cloudflare/models/errors/lists_get_lists_error.dart';import 'package:pub_cloudflare/models/errors/lists_update_a_list_error.dart';import 'package:pub_cloudflare/models/errors/lists_update_all_list_items_error.dart';import 'package:pub_cloudflare/models/firewall_filter_delete_response_single/firewall_filter_delete_response_single_result.dart';import 'package:pub_cloudflare/models/lists_account_id.dart';import 'package:pub_cloudflare/models/lists_bulk_operation_completed.dart';import 'package:pub_cloudflare/models/lists_bulk_operation_failed.dart';import 'package:pub_cloudflare/models/lists_bulk_operation_pending_or_running.dart';import 'package:pub_cloudflare/models/lists_create_a_list_request.dart';import 'package:pub_cloudflare/models/lists_delete_list_items_request.dart';import 'package:pub_cloudflare/models/lists_item.dart';import 'package:pub_cloudflare/models/lists_item_id.dart';import 'package:pub_cloudflare/models/lists_items_update_request_collection2.dart';import 'package:pub_cloudflare/models/lists_list.dart';import 'package:pub_cloudflare/models/lists_list_id.dart';import 'package:pub_cloudflare/models/lists_list_item_asn_full.dart';import 'package:pub_cloudflare/models/lists_list_item_hostname_full.dart';import 'package:pub_cloudflare/models/lists_list_item_ip_full.dart';import 'package:pub_cloudflare/models/lists_list_item_redirect_full.dart';import 'package:pub_cloudflare/models/lists_lists_async_response/lists_lists_async_response_result.dart';import 'package:pub_cloudflare/models/lists_operation.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';import 'package:pub_cloudflare/models/lists_update_a_list_request.dart';/// ListsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ListsApi with ApiExecutor {const ListsApi(this.apiConfig);
 /// Fetches all lists in the account.
 ///
 /// `GET /accounts/{account_id}/rules/lists`
-Future<ApiResult<ResponseCommon41Result, ListsGetListsError>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListsList>, ListsGetListsError>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return (json['result'] as List<dynamic>).map((e) => ListsList.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: ListsGetListsError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Creates a new list of the specified kind.
 ///
 /// `POST /accounts/{account_id}/rules/lists`
-Future<ApiResult<ResponseCommon41Result, ListsCreateAListError>> listsCreateAList({required ListsAccountId accountId, required ListsCreateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsCreateAListError>> listsCreateAList({required ListsAccountId accountId, required ListsCreateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsList.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsCreateAListError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// Fetches the details of a list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41Result, ListsGetAListError>> listsGetAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsGetAListError>> listsGetAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsList.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsGetAListError.fromResponse,
 );
@@ -85,7 +85,7 @@ return execute(
 /// Updates the description of a list.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41Result, ListsUpdateAListError>> listsUpdateAList({required ListsListId listId, required ListsAccountId accountId, required ListsUpdateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsList, ListsUpdateAListError>> listsUpdateAList({required ListsListId listId, required ListsAccountId accountId, required ListsUpdateAListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsList.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsUpdateAListError.fromResponse,
 );
@@ -110,7 +110,7 @@ return execute(
 /// Deletes a specific list and all its items.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}`
-Future<ApiResult<ResponseCommon41Result, ListsDeleteAListError>> listsDeleteAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallFilterDeleteResponseSingleResult, ListsDeleteAListError>> listsDeleteAList({required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return FirewallFilterDeleteResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsDeleteAListError.fromResponse,
 );
@@ -174,7 +174,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `POST /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41Result, ListsCreateListItemsError>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsCreateListItemsError>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -189,7 +189,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsCreateListItemsError.fromResponse,
 );
@@ -203,7 +203,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41Result, ListsUpdateAllListItemsError>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsUpdateAllListItemsError>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -218,7 +218,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsUpdateAllListItemsError.fromResponse,
 );
@@ -232,7 +232,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41Result, ListsDeleteListItemsError>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponseResult, ListsDeleteListItemsError>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -247,7 +247,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ListsDeleteListItemsError.fromResponse,
 );
@@ -257,7 +257,7 @@ return execute(
 /// Fetches a list item in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items/{item_id}`
-Future<ApiResult<ResponseCommon41Result, ListsGetAListItemError>> listsGetAListItem({required ListsItemId itemId, required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsItem, ListsGetAListItemError>> listsGetAListItem({required ListsItemId itemId, required ListsListId listId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -270,7 +270,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return OneOf4.parse(json['result'], fromA: (v) => ListsListItemIpFull.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsListItemHostnameFull.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsListItemRedirectFull.fromJson(v as Map<String, dynamic>), fromD: (v) => ListsListItemAsnFull.fromJson(v as Map<String, dynamic>),);
   },
   onError: ListsGetAListItemError.fromResponse,
 );
@@ -282,7 +282,7 @@ return execute(
 /// The `status` property can have one of the following values: `pending`, `running`, `completed`, or `failed`. If the status is `failed`, the `error` property will contain a message describing the error.
 ///
 /// `GET /accounts/{account_id}/rules/lists/bulk_operations/{operation_id}`
-Future<ApiResult<ResponseCommon41Result, ListsGetBulkOperationStatusError>> listsGetBulkOperationStatus({required ListsOperationId operationId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsOperation, ListsGetBulkOperationStatusError>> listsGetBulkOperationStatus({required ListsOperationId operationId, required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -295,7 +295,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), greedy: const {0},);
+    return OneOf3.parse(json['result'], fromA: (v) => ListsBulkOperationPendingOrRunning.fromJson(v as Map<String, dynamic>), fromB: (v) => ListsBulkOperationCompleted.fromJson(v as Map<String, dynamic>), fromC: (v) => ListsBulkOperationFailed.fromJson(v as Map<String, dynamic>),);
   },
   onError: ListsGetBulkOperationStatusError.fromResponse,
 );

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustOrganizationApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_organizations.dart';import 'package:pub_cloudflare/models/access_service_tokens.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';import 'package:pub_cloudflare/models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_organizations.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';import 'package:pub_cloudflare/models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response_result.dart';import 'package:pub_cloudflare/models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import 'package:pub_cloudflare/models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_response/zero_trust_organization_update_your_zero_trust_organization_doh_settings_response_result.dart';import 'package:pub_cloudflare/models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -87,7 +87,7 @@ return execute(
 /// Returns the DoH settings for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult?, AccessApplicationsAddAnApplicationError>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -110,7 +110,7 @@ return execute(
 /// Updates the DoH settings for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult?, AccessApplicationsAddAnApplicationError>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -125,7 +125,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );

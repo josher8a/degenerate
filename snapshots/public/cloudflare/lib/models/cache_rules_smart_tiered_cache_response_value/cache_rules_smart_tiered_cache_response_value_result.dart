@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CacheRulesSmartTieredCacheResponseValue (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Smart Tiered Cache zone setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache/cache_rules_smart_tiered_cache_id.dart';/// Value of the Smart Tiered Cache zone setting.
 sealed class CacheRulesSmartTieredCacheValue {const CacheRulesSmartTieredCacheValue();
 
 factory CacheRulesSmartTieredCacheValue.fromJson(String json) { return switch (json) {
@@ -69,63 +69,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 @override int get hashCode => value.hashCode;
 
  }
-/// ID of the zone setting.
-sealed class CacheRulesSmartTieredCacheResponseValueResultId {const CacheRulesSmartTieredCacheResponseValueResultId();
-
-factory CacheRulesSmartTieredCacheResponseValueResultId.fromJson(String json) { return switch (json) {
-  'tiered_cache_smart_topology_enable' => tieredCacheSmartTopologyEnable,
-  _ => CacheRulesSmartTieredCacheResponseValueResultId$Unknown(json),
-}; }
-
-static const CacheRulesSmartTieredCacheResponseValueResultId tieredCacheSmartTopologyEnable = CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable._();
-
-static const List<CacheRulesSmartTieredCacheResponseValueResultId> values = [tieredCacheSmartTopologyEnable];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'tiered_cache_smart_topology_enable' => 'tieredCacheSmartTopologyEnable',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CacheRulesSmartTieredCacheResponseValueResultId$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() tieredCacheSmartTopologyEnable, required W Function(String value) $unknown, }) { return switch (this) {
-      CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable() => tieredCacheSmartTopologyEnable(),
-      CacheRulesSmartTieredCacheResponseValueResultId$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? tieredCacheSmartTopologyEnable, W Function(String value)? $unknown, }) { return switch (this) {
-      CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable() => tieredCacheSmartTopologyEnable != null ? tieredCacheSmartTopologyEnable() : orElse(value),
-      CacheRulesSmartTieredCacheResponseValueResultId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'CacheRulesSmartTieredCacheResponseValueResultId($value)';
-
- }
-@immutable final class CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable extends CacheRulesSmartTieredCacheResponseValueResultId {const CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable._();
-
-@override String get value => 'tiered_cache_smart_topology_enable';
-
-@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesSmartTieredCacheResponseValueResultId$tieredCacheSmartTopologyEnable;
-
-@override int get hashCode => 'tiered_cache_smart_topology_enable'.hashCode;
-
- }
-@immutable final class CacheRulesSmartTieredCacheResponseValueResultId$Unknown extends CacheRulesSmartTieredCacheResponseValueResultId {const CacheRulesSmartTieredCacheResponseValueResultId$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesSmartTieredCacheResponseValueResultId$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
 @immutable final class CacheRulesSmartTieredCacheResponseValueResult {const CacheRulesSmartTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn, });
 
 factory CacheRulesSmartTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCacheResponseValueResult(
-  id: CacheRulesSmartTieredCacheResponseValueResultId.fromJson(json['id'] as String),
+  id: CacheRulesSmartTieredCacheId.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   value: CacheRulesSmartTieredCacheValue.fromJson(json['value'] as String),
 ); }
@@ -133,7 +80,7 @@ factory CacheRulesSmartTieredCacheResponseValueResult.fromJson(Map<String, dynam
 /// ID of the zone setting.
 /// 
 /// Example: `'tiered_cache_smart_topology_enable'`
-final CacheRulesSmartTieredCacheResponseValueResultId id;
+final CacheRulesSmartTieredCacheId id;
 
 /// Last time this setting was modified.
 /// 
@@ -149,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-CacheRulesSmartTieredCacheResponseValueResult copyWith({CacheRulesSmartTieredCacheResponseValueResultId? id, DateTime? Function()? modifiedOn, CacheRulesSmartTieredCacheValue? value, }) { return CacheRulesSmartTieredCacheResponseValueResult(
+CacheRulesSmartTieredCacheResponseValueResult copyWith({CacheRulesSmartTieredCacheId? id, DateTime? Function()? modifiedOn, CacheRulesSmartTieredCacheValue? value, }) { return CacheRulesSmartTieredCacheResponseValueResult(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value ?? this.value,

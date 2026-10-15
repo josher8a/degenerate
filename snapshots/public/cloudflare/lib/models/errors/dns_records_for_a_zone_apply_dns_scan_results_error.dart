@@ -32,6 +32,5 @@ final String? rawBody;
 
  }
 typedef DnsRecordsForAZoneBatchDnsRecordsError = DnsRecordsForAZoneApplyDnsScanResultsError;
-typedef DnsRecordsForAZoneDeleteDnsRecordError = DnsRecordsForAZoneApplyDnsScanResultsError;
 typedef DnsRecordsForAZoneExportDnsRecordsError = DnsRecordsForAZoneApplyDnsScanResultsError;
 typedef DnsRecordsForAZoneReviewDnsScanError = DnsRecordsForAZoneApplyDnsScanResultsError;

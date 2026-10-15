@@ -1,17 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WaitingroomZoneSettings
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.
-/// Verified search engine crawlers will not be tracked or counted by the waiting room system,
-/// and will not appear in waiting room analytics.
-/// 
-extension type const WaitingroomSearchEngineCrawlerBypass(bool value) {
-factory WaitingroomSearchEngineCrawlerBypass.fromJson(bool json) => WaitingroomSearchEngineCrawlerBypass(json);
-
-bool toJson() => value;
-
-}
-@immutable final class WaitingroomZoneSettings {const WaitingroomZoneSettings({this.searchEngineCrawlerBypass});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_search_engine_crawler_bypass.dart';@immutable final class WaitingroomZoneSettings {const WaitingroomZoneSettings({this.searchEngineCrawlerBypass});
 
 factory WaitingroomZoneSettings.fromJson(Map<String, dynamic> json) { return WaitingroomZoneSettings(
   searchEngineCrawlerBypass: json['search_engine_crawler_bypass'] != null ? WaitingroomSearchEngineCrawlerBypass.fromJson(json['search_engine_crawler_bypass'] as bool) : null,

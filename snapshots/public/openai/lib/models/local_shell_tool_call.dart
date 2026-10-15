@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LocalShellToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';/// A tool call to run a command on the local shell.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';/// A tool call to run a command on the local shell.
 /// 
 @immutable final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
 
@@ -10,7 +10,7 @@ factory LocalShellToolCall.fromJson(Map<String, dynamic> json) { return LocalShe
   id: json['id'] as String,
   callId: json['call_id'] as String,
   action: LocalShellExecAction.fromJson(json['action'] as Map<String, dynamic>),
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
 ); }
 
 /// The type of the local shell call. Always `local_shell_call`.
@@ -29,7 +29,7 @@ final LocalShellExecAction action;
 
 /// The status of the local shell call.
 /// 
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
       json.containsKey('status'); } 
-LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return LocalShellToolCall(
+LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) { return LocalShellToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

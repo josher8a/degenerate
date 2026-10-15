@@ -31,4 +31,3 @@ final class UserAgentBlockingRulesDeleteAUserAgentBlockingRuleError$Unknown exte
 final String? rawBody;
 
  }
-typedef ZoneLockdownDeleteAZoneLockdownRuleError = UserAgentBlockingRulesDeleteAUserAgentBlockingRuleError;

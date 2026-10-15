@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common14.dart';sealed class CloudforceOnePriorityDeleteError {const CloudforceOnePriorityDeleteError();
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure19.dart';sealed class CloudforceOnePriorityDeleteError {const CloudforceOnePriorityDeleteError();
 
 factory CloudforceOnePriorityDeleteError.fromResponse(ApiResponse response) {     try {
       return switch (response.statusCode) {
-        _ when response.statusCode >= 400 && response.statusCode <= 499 => CloudforceOnePriorityDeleteError$4XX(ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => CloudforceOnePriorityDeleteError$4XX(ResponseCommonFailure19.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => CloudforceOnePriorityDeleteError$Unknown(response.statusCode, response.body),
       };
     } on Object {
@@ -17,7 +17,7 @@ Object? get typedError => null;
  }
 final class CloudforceOnePriorityDeleteError$4XX extends CloudforceOnePriorityDeleteError {const CloudforceOnePriorityDeleteError$4XX(this.error, this.statusCode, );
 
-final ResponseCommon14 error;
+final ResponseCommonFailure19 error;
 
 @override final int statusCode;
 

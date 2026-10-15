@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "D1Api" (12 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_account_identifier.dart';import 'package:pub_cloudflare/models/d1_batch_query.dart';import 'package:pub_cloudflare/models/d1_create_database_request.dart';import 'package:pub_cloudflare/models/d1_database_identifier.dart';import 'package:pub_cloudflare/models/d1_database_response.dart';import 'package:pub_cloudflare/models/d1_database_update_partial_request_body.dart';import 'package:pub_cloudflare/models/d1_database_update_request_body.dart';import 'package:pub_cloudflare/models/d1_export_database_request.dart';import 'package:pub_cloudflare/models/d1_import_database_request.dart';import 'package:pub_cloudflare/models/d1_time_travel_bookmark.dart';import 'package:pub_cloudflare/models/d1_time_travel_timestamp.dart';import 'package:pub_cloudflare/models/errors/d1_create_database_error.dart';/// D1Api operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_account_identifier.dart';import 'package:pub_cloudflare/models/d1_batch_query.dart';import 'package:pub_cloudflare/models/d1_create_database_request.dart';import 'package:pub_cloudflare/models/d1_database_details_response.dart';import 'package:pub_cloudflare/models/d1_database_identifier.dart';import 'package:pub_cloudflare/models/d1_database_response.dart';import 'package:pub_cloudflare/models/d1_database_update_partial_request_body.dart';import 'package:pub_cloudflare/models/d1_database_update_request_body.dart';import 'package:pub_cloudflare/models/d1_export_database_request.dart';import 'package:pub_cloudflare/models/d1_export_database_response/d1_export_database_response_result.dart';import 'package:pub_cloudflare/models/d1_import_database_request.dart';import 'package:pub_cloudflare/models/d1_import_database_response/d1_import_database_response_result.dart';import 'package:pub_cloudflare/models/d1_query_result_response.dart';import 'package:pub_cloudflare/models/d1_raw_result_response.dart';import 'package:pub_cloudflare/models/d1_time_travel_bookmark.dart';import 'package:pub_cloudflare/models/d1_time_travel_get_bookmark_response/d1_time_travel_get_bookmark_response_result.dart';import 'package:pub_cloudflare/models/d1_time_travel_restore_response.dart';import 'package:pub_cloudflare/models/d1_time_travel_timestamp.dart';import 'package:pub_cloudflare/models/errors/d1_create_database_error.dart';/// D1Api operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -51,7 +51,7 @@ return execute(
 /// Returns the created D1 database.
 ///
 /// `POST /accounts/{account_id}/d1/database`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, D1CreateDatabaseError>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1DatabaseDetailsResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -76,7 +76,7 @@ return execute(
 /// Returns the specified D1 database.
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1GetDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, D1CreateDatabaseError>> d1GetDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -89,7 +89,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1DatabaseDetailsResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -99,7 +99,7 @@ return execute(
 /// Updates the specified D1 database.
 ///
 /// `PUT /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, D1CreateDatabaseError>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -114,7 +114,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1DatabaseDetailsResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -124,7 +124,7 @@ return execute(
 /// Updates partially the specified D1 database.
 ///
 /// `PATCH /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1DatabaseDetailsResponse, D1CreateDatabaseError>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -139,7 +139,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1DatabaseDetailsResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -149,7 +149,7 @@ return execute(
 /// Deletes the specified D1 database.
 ///
 /// `DELETE /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, D1CreateDatabaseError>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -162,7 +162,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return json['result'] as Map<String, dynamic>?;
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -175,7 +175,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/export`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ExportDatabaseResponseResult, D1CreateDatabaseError>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -190,7 +190,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1ExportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -202,7 +202,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/import`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ImportDatabaseResponseResult, D1CreateDatabaseError>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -217,7 +217,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1ImportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -227,7 +227,7 @@ return execute(
 /// Returns the query result as an object.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/query`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<D1QueryResultResponse>, D1CreateDatabaseError>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -242,7 +242,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => D1QueryResultResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -252,7 +252,7 @@ return execute(
 /// Returns the query result rows as arrays rather than objects. This is a performance-optimized version of the /query endpoint.
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/raw`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<D1RawResultResponse>, D1CreateDatabaseError>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -267,7 +267,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => D1RawResultResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -279,7 +279,7 @@ return execute(
 /// 
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<D1TimeTravelGetBookmarkResponseResult, D1CreateDatabaseError>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (timestamp != null) {
   queryParameters['timestamp'] = timestamp.toJson();
@@ -300,7 +300,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1TimeTravelGetBookmarkResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );
@@ -311,7 +311,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
-Future<ApiResult<Map<String, dynamic>, D1CreateDatabaseError>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<D1TimeTravelRestoreResponse, D1CreateDatabaseError>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bookmark != null) {
   queryParameters['bookmark'] = bookmark.toJson();
@@ -335,7 +335,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+    return D1TimeTravelRestoreResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: D1CreateDatabaseError.fromResponse,
 );

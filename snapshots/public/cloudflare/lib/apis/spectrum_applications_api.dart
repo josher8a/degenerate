@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SpectrumApplicationsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/spectrum_applications_create_spectrum_application_using_a_name_for_the_origin_error.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_direction.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_order.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_collection/spectrum_config_app_config_collection_result.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_single/spectrum_config_app_config_single_result.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_paygo_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_update_app_config.dart';/// SpectrumApplicationsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/spectrum_applications_create_spectrum_application_using_a_name_for_the_origin_error.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_direction.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_order.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_collection/spectrum_config_app_config_collection_result.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_single/spectrum_config_app_config_single_result.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_paygo_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_update_app_config.dart';/// SpectrumApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -127,7 +127,7 @@ return execute(
 /// Deletes a previously existing application.
 ///
 /// `DELETE /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<ResponseSingleId5Result?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -140,7 +140,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: SpectrumApplicationsCreateSpectrumApplicationUsingANameForTheOriginError.fromResponse,
 );

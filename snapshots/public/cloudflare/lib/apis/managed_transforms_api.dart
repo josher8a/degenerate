@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ManagedTransformsApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_account_ruleset_error.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms.dart';import 'package:pub_cloudflare/models/rulesets_zone_id.dart';/// ManagedTransformsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/delete_managed_transforms_error.dart';import 'package:pub_cloudflare/models/errors/list_managed_transforms_error.dart';import 'package:pub_cloudflare/models/errors/update_managed_transforms_error.dart';import 'package:pub_cloudflare/models/rulesets_managed_transforms.dart';import 'package:pub_cloudflare/models/rulesets_zone_id.dart';/// ManagedTransformsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ManagedTransformsApi with ApiExecutor {const ManagedTransformsApi(th
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, ListManagedTransformsError>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,9 +27,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: ListManagedTransformsError.fromResponse,
 );
  } 
 /// Update Managed Transforms
@@ -37,7 +37,7 @@ return execute(
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, UpdateManagedTransformsError>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransforms body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,9 +52,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: UpdateManagedTransformsError.fromResponse,
 );
  } 
 /// Delete Managed Transforms
@@ -62,7 +62,7 @@ return execute(
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void, CreateAccountRulesetError>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteManagedTransformsError>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -74,7 +74,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: DeleteManagedTransformsError.fromResponse,
 );
  } 
  }

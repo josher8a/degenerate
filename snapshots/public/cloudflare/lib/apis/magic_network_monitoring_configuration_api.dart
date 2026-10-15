@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicNetworkMonitoringConfigurationApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_create_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_delete_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_list_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_list_rules_and_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_update_account_configuration_fields_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_update_an_entire_account_configuration_error.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_create_account_configuration_request.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_update_account_configuration_fields_request.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_update_an_entire_account_configuration_request.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_account_identifier.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// MagicNetworkMonitoringConfigurationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_create_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_delete_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_list_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_list_rules_and_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_update_account_configuration_fields_error.dart';import 'package:pub_cloudflare/models/errors/magic_network_monitoring_configuration_update_an_entire_account_configuration_error.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_create_account_configuration_request.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_update_account_configuration_fields_request.dart';import 'package:pub_cloudflare/models/magic_network_monitoring_configuration_update_an_entire_account_configuration_request.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_account_identifier.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config.dart';/// MagicNetworkMonitoringConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MagicNetworkMonitoringConfigurationApi with ApiExecutor {const Magic
 /// Lists default sampling, router IPs and warp devices for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationListAccountConfigurationError>> magicNetworkMonitoringConfigurationListAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationListAccountConfigurationError>> magicNetworkMonitoringConfigurationListAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationListAccountConfigurationError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Create a new network monitoring configuration.
 ///
 /// `POST /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationCreateAccountConfigurationError>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationCreateAccountConfigurationError>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationCreateAccountConfigurationError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// Update an existing network monitoring configuration, requires the entire configuration to be updated at once.
 ///
 /// `PUT /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationError>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationError>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationError.fromResponse,
 );
@@ -87,7 +87,7 @@ return execute(
 /// Update fields in an existing network monitoring configuration.
 ///
 /// `PATCH /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsError>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsError>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,7 +102,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsError.fromResponse,
 );
@@ -112,7 +112,7 @@ return execute(
 /// Delete an existing network monitoring configuration.
 ///
 /// `DELETE /accounts/{account_id}/mnm/config`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationDeleteAccountConfigurationError>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationDeleteAccountConfigurationError>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -125,7 +125,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationDeleteAccountConfigurationError.fromResponse,
 );
@@ -135,7 +135,7 @@ return execute(
 /// Lists default sampling, router IPs, warp devices, and rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config/full`
-Future<ApiResult<ResponseCommon33Result, MagicNetworkMonitoringConfigurationListRulesAndAccountConfigurationError>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig, MagicNetworkMonitoringConfigurationListRulesAndAccountConfigurationError>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -148,7 +148,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: MagicNetworkMonitoringConfigurationListRulesAndAccountConfigurationError.fromResponse,
 );

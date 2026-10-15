@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// A tool call to run a function. See the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';/// A tool call to run a function. See the
 /// [function calling guide](/docs/guides/function-calling) for more information.
 /// 
 @immutable final class FunctionToolCall {const FunctionToolCall({required this.type, required this.callId, required this.name, required this.arguments, this.id, this.namespace, this.status, });
@@ -13,7 +13,7 @@ factory FunctionToolCall.fromJson(Map<String, dynamic> json) { return FunctionTo
   namespace: json['namespace'] as String?,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The unique ID of the function tool call.
@@ -43,7 +43,7 @@ final String arguments;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-FunctionToolCall copyWith({String? Function()? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return FunctionToolCall(
+FunctionToolCall copyWith({String? Function()? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) { return FunctionToolCall(
   id: id != null ? id() : this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,

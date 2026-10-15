@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerToolCallOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// The type of the computer tool call output. Always `computer_call_output`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';/// The type of the computer tool call output. Always `computer_call_output`.
 /// 
 sealed class ComputerToolCallOutputType {const ComputerToolCallOutputType();
 
@@ -65,7 +65,7 @@ factory ComputerToolCallOutput.fromJson(Map<String, dynamic> json) { return Comp
   callId: json['call_id'] as String,
   acknowledgedSafetyChecks: (json['acknowledged_safety_checks'] as List<dynamic>?)?.map((e) => ComputerCallSafetyCheckParam.fromJson(e as Map<String, dynamic>)).toList(),
   output: ComputerScreenshotImage.fromJson(json['output'] as Map<String, dynamic>),
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The type of the computer tool call output. Always `computer_call_output`.
@@ -90,7 +90,7 @@ final ComputerScreenshotImage output;
 /// The status of the message input. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when input items are returned via API.
 /// 
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output'); } 
-ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ComputerToolCallOutput(
+ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ComputerToolCallOutput(
   type: type ?? this.type,
   id: id != null ? id() : this.id,
   callId: callId ?? this.callId,

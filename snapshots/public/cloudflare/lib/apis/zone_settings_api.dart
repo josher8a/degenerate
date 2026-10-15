@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneSettingsApi" (12 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams.dart';import 'package:pub_cloudflare/models/cache_rules_origin_max_http_version.dart';import 'package:pub_cloudflare/models/errors/smart_tiered_cache_delete_smart_tiered_cache_setting_error.dart';import 'package:pub_cloudflare/models/errors/zone_settings_change_fonts_setting_error.dart';import 'package:pub_cloudflare/models/errors/zone_settings_edit_single_setting_error.dart';import 'package:pub_cloudflare/models/speed_base.dart';import 'package:pub_cloudflare/models/speed_identifier.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_aegis_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import 'package:pub_cloudflare/models/zone_settings_change_fonts_setting_request.dart';import 'package:pub_cloudflare/models/zone_settings_change_speed_brain_setting_request.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_setting.dart';import 'package:pub_cloudflare/models/zones_setting_name.dart';import 'package:pub_cloudflare/models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams.dart';import 'package:pub_cloudflare/models/cache_rules_origin_max_http_version.dart';import 'package:pub_cloudflare/models/errors/smart_tiered_cache_delete_smart_tiered_cache_setting_error.dart';import 'package:pub_cloudflare/models/errors/zone_settings_change_fonts_setting_error.dart';import 'package:pub_cloudflare/models/errors/zone_settings_edit_single_setting_error.dart';import 'package:pub_cloudflare/models/speed_cloudflare_fonts.dart';import 'package:pub_cloudflare/models/speed_cloudflare_speed_brain_response.dart';import 'package:pub_cloudflare/models/speed_identifier.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_aegis_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import 'package:pub_cloudflare/models/zone_settings_change_fonts_setting_request.dart';import 'package:pub_cloudflare/models/zone_settings_change_speed_brain_setting_request.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_setting.dart';import 'package:pub_cloudflare/models/zones_setting_name.dart';import 'package:pub_cloudflare/models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -112,7 +112,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedBase?, ZoneSettingsChangeFontsSettingError>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, ZoneSettingsChangeFontsSettingError>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,7 +125,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareFonts.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: ZoneSettingsChangeFontsSettingError.fromResponse,
 );
@@ -137,7 +137,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<SpeedBase?, ZoneSettingsChangeFontsSettingError>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareFonts?, ZoneSettingsChangeFontsSettingError>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -152,7 +152,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareFonts.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: ZoneSettingsChangeFontsSettingError.fromResponse,
 );
@@ -260,7 +260,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedBase?, ZoneSettingsChangeFontsSettingError>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ZoneSettingsChangeFontsSettingError>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -273,7 +273,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareSpeedBrainResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: ZoneSettingsChangeFontsSettingError.fromResponse,
 );
@@ -285,7 +285,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<SpeedBase?, ZoneSettingsChangeFontsSettingError>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpeedCloudflareSpeedBrainResponse?, ZoneSettingsChangeFontsSettingError>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -300,7 +300,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? SpeedCloudflareSpeedBrainResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: ZoneSettingsChangeFontsSettingError.fromResponse,
 );

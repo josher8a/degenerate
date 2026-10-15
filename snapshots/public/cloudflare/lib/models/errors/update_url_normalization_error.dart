@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/update_url_normalization_response4_xx.dart';sealed class UpdateUrlNormalizationError {const UpdateUrlNormalizationError();
+
+factory UpdateUrlNormalizationError.fromResponse(ApiResponse response) {     try {
+      return switch (response.statusCode) {
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => UpdateUrlNormalizationError$4XX(UpdateUrlNormalizationResponse4Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
+        _ => UpdateUrlNormalizationError$Unknown(response.statusCode, response.body),
+      };
+    } on Object {
+      return UpdateUrlNormalizationError$Unknown(response.statusCode, response.body);
+    } }
+
+int get statusCode;
+Object? get typedError => null;
+
+ }
+final class UpdateUrlNormalizationError$4XX extends UpdateUrlNormalizationError {const UpdateUrlNormalizationError$4XX(this.error, this.statusCode, );
+
+final UpdateUrlNormalizationResponse4Xx error;
+
+@override final int statusCode;
+
+@override Object get typedError => error;
+
+ }
+final class UpdateUrlNormalizationError$Unknown extends UpdateUrlNormalizationError {const UpdateUrlNormalizationError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }

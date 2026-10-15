@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkersApi" (8 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/errors/create_worker_error.dart';import 'package:pub_cloudflare/models/errors/delete_worker_error.dart';import 'package:pub_cloudflare/models/errors/edit_worker_error.dart';import 'package:pub_cloudflare/models/errors/get_worker_error.dart';import 'package:pub_cloudflare/models/errors/list_workers_error.dart';import 'package:pub_cloudflare/models/list_workers_order.dart';import 'package:pub_cloudflare/models/list_workers_order_by.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_worker.dart';/// WorkersApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_response.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/builds_trigger_response.dart';import 'package:pub_cloudflare/models/errors/create_worker_error.dart';import 'package:pub_cloudflare/models/errors/delete_worker_error.dart';import 'package:pub_cloudflare/models/errors/edit_worker_error.dart';import 'package:pub_cloudflare/models/errors/get_worker_error.dart';import 'package:pub_cloudflare/models/errors/list_workers_error.dart';import 'package:pub_cloudflare/models/errors/update_worker_error.dart';import 'package:pub_cloudflare/models/list_workers_order.dart';import 'package:pub_cloudflare/models/list_workers_order_by.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_worker.dart';/// WorkersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WorkersApi with ApiExecutor {const WorkersApi(this.apiConfig);
 /// Get all builds for a specific worker script with pagination
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/builds`
-Future<ApiResult<Map<String, dynamic>?, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<BuildsBuildResponse>, Never>> listBuildsByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -38,7 +38,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return (json['result'] as List<dynamic>).map((e) => BuildsBuildResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -47,7 +47,7 @@ return execute(
 /// Get all triggers for a specific worker script
 ///
 /// `GET /accounts/{account_id}/builds/workers/{external_script_id}/triggers`
-Future<ApiResult<Map<String, dynamic>?, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BuildsTriggerResponse>, Never>> listTriggersByScript({required BuildsAccountId accountId, required BuildsExternalScriptId externalScriptId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,7 +60,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+    return (json['result'] as List<dynamic>).map((e) => BuildsTriggerResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -157,7 +157,7 @@ return execute(
 /// Perform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.
 ///
 /// `PUT /accounts/{account_id}/workers/workers/{worker_id}`
-Future<ApiResult<WorkersWorker, EditWorkerError>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersWorker, UpdateWorkerError>> updateWorker({required WorkersIdentifier accountId, required String workerId, required WorkersWorker body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -174,7 +174,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: EditWorkerError.fromResponse,
+  onError: UpdateWorkerError.fromResponse,
 );
  } 
 /// Edit Worker

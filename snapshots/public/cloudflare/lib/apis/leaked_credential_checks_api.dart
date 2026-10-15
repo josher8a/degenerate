@@ -14,7 +14,7 @@ final class LeakedCredentialChecksApi with ApiExecutor {const LeakedCredentialCh
 /// Retrieves the current status of Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsGetStatusError>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsGetStatusError>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return BundleStatus.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LeakedCredentialsGetStatusError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Updates the current status of Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsSetStatusError>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsSetStatusError>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return BundleStatus.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LeakedCredentialsSetStatusError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// List user-defined detection patterns for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsListDetectionsError>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomDetection>, LeakedCredentialsListDetectionsError>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return (json['result'] as List<dynamic>).map((e) => BundleCustomDetection.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: LeakedCredentialsListDetectionsError.fromResponse,
 );
@@ -85,7 +85,7 @@ return execute(
 /// Create user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionError>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LeakedCredentialsCreateDetectionError.fromResponse,
 );
@@ -110,7 +110,7 @@ return execute(
 /// Get user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsGetDetectionError>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsGetDetectionError>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LeakedCredentialsGetDetectionError.fromResponse,
 );
@@ -133,7 +133,7 @@ return execute(
 /// Update user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `PUT /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon31Result, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionError>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetection body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,7 +148,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: LeakedCredentialsUpdateDetectionError.fromResponse,
 );

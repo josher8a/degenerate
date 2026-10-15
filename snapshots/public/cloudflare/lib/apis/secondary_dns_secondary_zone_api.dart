@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecondaryDnsSecondaryZoneApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_create_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_delete_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_force_axfr_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_secondary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_update_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/rum_rule_id_response_single/rum_rule_id_response_single_result.dart';import 'package:pub_cloudflare/models/secondary_dns_dns_secondary_secondary_zone.dart';import 'package:pub_cloudflare/models/secondary_dns_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_incoming/secondary_dns_single_response_incoming_result.dart';/// SecondaryDnsSecondaryZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_create_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_delete_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_force_axfr_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_secondary_zone_configuration_details_error.dart';import 'package:pub_cloudflare/models/errors/secondary_dns_secondary_zone_update_secondary_zone_configuration_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_dns_secondary_secondary_zone.dart';import 'package:pub_cloudflare/models/secondary_dns_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_incoming/secondary_dns_single_response_incoming_result.dart';/// SecondaryDnsSecondaryZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -110,7 +110,7 @@ return execute(
 /// Delete secondary zone configuration for incoming zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/incoming`
-Future<ApiResult<RumRuleIdResponseSingleResult?, SecondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneDeleteSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, SecondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationError>> secondaryDnsSecondaryZoneDeleteSecondaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? RumRuleIdResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: SecondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationError.fromResponse,
 );

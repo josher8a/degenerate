@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneCacheSettingsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_clear_response_value/cache_rules_cache_reserve_clear_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_response_value/cache_rules_cache_reserve_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_regional_tiered_cache_response_value/cache_rules_regional_tiered_cache_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_result_object_delete.dart';import 'package:pub_cloudflare/models/cache_rules_variants_response_value/cache_rules_variants_response_value_result.dart';import 'package:pub_cloudflare/models/errors/smart_tiered_cache_delete_smart_tiered_cache_setting_error.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_cache_reserve_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_variants_setting_request.dart';/// ZoneCacheSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_clear_response_value/cache_rules_cache_reserve_clear_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_response_value/cache_rules_cache_reserve_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_regional_tiered_cache_response_value/cache_rules_regional_tiered_cache_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_variants.dart';import 'package:pub_cloudflare/models/cache_rules_variants_response_value/cache_rules_variants_response_value_result.dart';import 'package:pub_cloudflare/models/errors/smart_tiered_cache_delete_smart_tiered_cache_setting_error.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_cache_reserve_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_variants_setting_request.dart';/// ZoneCacheSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -204,7 +204,7 @@ return execute(
 /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
 ///
 /// `DELETE /zones/{zone_id}/cache/variants`
-Future<ApiResult<CacheRulesResultObjectDelete?, SmartTieredCacheDeleteSmartTieredCacheSettingError>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesVariants?, SmartTieredCacheDeleteSmartTieredCacheSettingError>> zoneCacheSettingsDeleteVariantsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -217,7 +217,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObjectDelete.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesVariants.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: SmartTieredCacheDeleteSmartTieredCacheSettingError.fromResponse,
 );

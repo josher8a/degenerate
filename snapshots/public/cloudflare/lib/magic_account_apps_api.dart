@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-export 'package:degenerate_runtime/degenerate_runtime.dart';export 'apis/magic_account_apps_api.dart';export 'models/errors/magic_account_apps_add_app_error.dart';export 'models/magic_app_add_single_request.dart';export 'models/magic_app_update_request.dart';export 'models/magic_identifier.dart';
+export 'package:degenerate_runtime/degenerate_runtime.dart';export 'apis/magic_account_apps_api.dart';export 'models/errors/magic_account_apps_add_app_error.dart';export 'models/magic_account_app.dart';export 'models/magic_account_app_id.dart';export 'models/magic_app.dart';export 'models/magic_app_add_single_request.dart';export 'models/magic_app_name.dart';export 'models/magic_app_type.dart';export 'models/magic_app_update_request.dart';export 'models/magic_cidr.dart';export 'models/magic_identifier.dart';export 'models/magic_managed_app.dart';export 'models/magic_managed_app_id.dart';

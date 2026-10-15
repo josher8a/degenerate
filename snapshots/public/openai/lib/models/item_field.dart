@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemField
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_tool_call.dart';import 'package:pub_openai/models/apply_patch_tool_call/apply_patch_tool_call_operation.dart';import 'package:pub_openai/models/apply_patch_tool_call_output.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_body.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';import 'package:pub_openai/models/function_shell_call_output.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/function_tool_call_output.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response_resource.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message.dart';import 'package:pub_openai/models/message/message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ItemFieldType {const ItemFieldType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_tool_call.dart';import 'package:pub_openai/models/apply_patch_tool_call/apply_patch_tool_call_operation.dart';import 'package:pub_openai/models/apply_patch_tool_call_output.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_body.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output_resource.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';import 'package:pub_openai/models/function_shell_call_output.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/function_tool_call_output.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response_resource.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message.dart';import 'package:pub_openai/models/message/message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ItemFieldType {const ItemFieldType();
 
 factory ItemFieldType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -413,7 +413,7 @@ factory ItemField.fromJson(Map<String, dynamic> json) { return switch (json['typ
 factory ItemField.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) { return ItemFieldMessage(Message(id: id, status: status, role: role, content: content)); }
 
 /// Build the `function_call` variant.
-factory ItemField.functionCall({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+factory ItemField.functionCall({required String callId, required String name, required String arguments, String? id, String? namespace, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
 
 /// Build the `tool_search_call` variant.
 factory ItemField.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ItemFieldToolSearchCall(ToolSearchCall(id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
@@ -422,7 +422,7 @@ factory ItemField.toolSearchCall({required String id, required String? callId, r
 factory ItemField.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ItemFieldToolSearchOutput(ToolSearchOutput(id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
 
 /// Build the `function_call_output` variant.
-factory ItemField.functionCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputStatus? status, }) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
+factory ItemField.functionCallOutput({required String callId, required CustomToolCallOutputOutput output, String? id, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldFunctionCallOutput(FunctionToolCallOutput(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
 
 /// Build the `file_search_call` variant.
 factory ItemField.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemFieldFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
@@ -434,13 +434,13 @@ factory ItemField.webSearchCall({required String id, required WebSearchToolCallS
 factory ItemField.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ItemFieldImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
 
 /// Build the `computer_call` variant.
-factory ItemField.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemFieldComputerCall(ComputerToolCall(id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+factory ItemField.computerCall({required String id, required String callId, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallOutputResourceStatus status, ComputerAction? action, List<ComputerAction>? actions, }) { return ItemFieldComputerCall(ComputerToolCall(id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
 
 /// Build the `ComputerToolCallOutputResource` variant.
-factory ItemField.computerToolCallOutputResource({required String callId, required ComputerScreenshotImage output, String? id, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutput(type: ComputerToolCallOutputType.fromJson('ComputerToolCallOutputResource'), id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+factory ItemField.computerToolCallOutputResource({required String id, required String callId, required ComputerScreenshotImage output, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutputResource(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
 
 /// Build the `reasoning` variant.
-factory ItemField.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+factory ItemField.reasoning({required String id, required List<SummaryTextContent> summary, String? encryptedContent, List<ReasoningTextContent>? content, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
 
 /// Build the `compaction` variant.
 factory ItemField.compaction({required String id, required String encryptedContent, String? createdBy, }) { return ItemFieldCompaction(CompactionBody(id: id, encryptedContent: encryptedContent, createdBy: createdBy)); }
@@ -449,7 +449,7 @@ factory ItemField.compaction({required String id, required String encryptedConte
 factory ItemField.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs>? outputs, }) { return ItemFieldCodeInterpreterCall(CodeInterpreterToolCall(id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
 
 /// Build the `local_shell_call` variant.
-factory ItemField.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputStatus status, }) { return ItemFieldLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
+factory ItemField.localShellCall({required String id, required String callId, required LocalShellExecAction action, required ComputerToolCallOutputResourceStatus status, }) { return ItemFieldLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
 
 /// Build the `local_shell_call_output` variant.
 factory ItemField.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ItemFieldLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
@@ -557,7 +557,7 @@ final FunctionToolCall functionToolCall;
 
 @override Map<String, dynamic> toJson() => {...functionToolCall.toJson(), 'type': type.toJson()};
 
-ItemFieldFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCall(functionToolCall.copyWith(
+ItemFieldFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldFunctionCall(functionToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
@@ -641,7 +641,7 @@ final FunctionToolCallOutput functionToolCallOutput;
 
 @override Map<String, dynamic> toJson() => {...functionToolCallOutput.toJson(), 'type': type.toJson()};
 
-ItemFieldFunctionCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCallOutput(functionToolCallOutput.copyWith(
+ItemFieldFunctionCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldFunctionCallOutput(functionToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,
@@ -743,7 +743,7 @@ final ComputerToolCall computerToolCall;
 
 @override Map<String, dynamic> toJson() => {...computerToolCall.toJson(), 'type': type.toJson()};
 
-ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerCall(computerToolCall.copyWith(
+ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldComputerCall(computerToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
@@ -761,17 +761,17 @@ ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Func
 @override String? get id => computerToolCall.id;
 
  }
-@immutable final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutput);
+@immutable final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutputResource);
 
-factory ItemFieldComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutput.fromJson(json)); }
+factory ItemFieldComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ItemFieldComputerToolCallOutputResource(ComputerToolCallOutputResource.fromJson(json)); }
 
-final ComputerToolCallOutput computerToolCallOutput;
+final ComputerToolCallOutputResource computerToolCallOutputResource;
 
 @override ItemFieldType get type => ItemFieldType.fromJson('ComputerToolCallOutputResource');
 
-@override Map<String, dynamic> toJson() => {...computerToolCallOutput.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...computerToolCallOutputResource.toJson(), 'type': type.toJson()};
 
-ItemFieldComputerToolCallOutputResource copyWith({String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldComputerToolCallOutputResource(computerToolCallOutput.copyWith(
+ItemFieldComputerToolCallOutputResource copyWith({String? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldComputerToolCallOutputResource(computerToolCallOutputResource.copyWith(
   id: id,
   callId: callId,
   acknowledgedSafetyChecks: acknowledgedSafetyChecks,
@@ -779,13 +779,13 @@ ItemFieldComputerToolCallOutputResource copyWith({String? Function()? id, String
   status: status,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemFieldComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput;
+    other is ItemFieldComputerToolCallOutputResource && computerToolCallOutputResource == other.computerToolCallOutputResource;
 
-@override int get hashCode => computerToolCallOutput.hashCode;
+@override int get hashCode => computerToolCallOutputResource.hashCode;
 
-@override String toString() => 'ItemField.computerToolCallOutputResource($computerToolCallOutput)';
+@override String toString() => 'ItemField.computerToolCallOutputResource($computerToolCallOutputResource)';
 
-@override String? get id => computerToolCallOutput.id;
+@override String? get id => computerToolCallOutputResource.id;
 
  }
 @immutable final class ItemFieldReasoning extends ItemField {const ItemFieldReasoning(this.reasoningItem);
@@ -798,7 +798,7 @@ final ReasoningItem reasoningItem;
 
 @override Map<String, dynamic> toJson() => {...reasoningItem.toJson(), 'type': type.toJson()};
 
-ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
+ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   summary: summary,
@@ -877,7 +877,7 @@ final LocalShellToolCall localShellToolCall;
 
 @override Map<String, dynamic> toJson() => {...localShellToolCall.toJson(), 'type': type.toJson()};
 
-ItemFieldLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ItemFieldLocalShellCall(localShellToolCall.copyWith(
+ItemFieldLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputResourceStatus? status, }) { return ItemFieldLocalShellCall(localShellToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,

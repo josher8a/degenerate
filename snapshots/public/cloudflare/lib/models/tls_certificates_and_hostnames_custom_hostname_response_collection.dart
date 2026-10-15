@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TlsCertificatesAndHostnamesCustomHostnameResponseCollection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_customhostname.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_messages2.dart';@immutable final class TlsCertificatesAndHostnamesCustomHostnameResponseCollection {const TlsCertificatesAndHostnamesCustomHostnameResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_sessions_response/access_active_sessions_response_result_info.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_hostname.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_messages2.dart';@immutable final class TlsCertificatesAndHostnamesCustomHostnameResponseCollection {const TlsCertificatesAndHostnamesCustomHostnameResponseCollection({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 
 factory TlsCertificatesAndHostnamesCustomHostnameResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomHostnameResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessActiveSessionsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomhostname.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomHostname.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<TlsCertificatesAndHostnamesMessages2> errors;
@@ -22,7 +22,7 @@ final bool success;
 
 final AccessActiveSessionsResponseResultInfo? resultInfo;
 
-final List<TlsCertificatesAndHostnamesCustomhostname>? result;
+final List<TlsCertificatesAndHostnamesCustomHostname>? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-TlsCertificatesAndHostnamesCustomHostnameResponseCollection copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<TlsCertificatesAndHostnamesCustomhostname>? Function()? result, }) { return TlsCertificatesAndHostnamesCustomHostnameResponseCollection(
+TlsCertificatesAndHostnamesCustomHostnameResponseCollection copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, bool? success, AccessActiveSessionsResponseResultInfo? Function()? resultInfo, List<TlsCertificatesAndHostnamesCustomHostname>? Function()? result, }) { return TlsCertificatesAndHostnamesCustomHostnameResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

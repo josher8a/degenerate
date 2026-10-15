@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItemMessageAssistant
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant/realtime_conversation_item_message_assistant_content.dart';/// An assistant message item in a Realtime conversation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant/realtime_conversation_item_message_assistant_content.dart';/// An assistant message item in a Realtime conversation.
 @immutable final class RealtimeConversationItemMessageAssistant {const RealtimeConversationItemMessageAssistant({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemMessageAssistant.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageAssistant(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   role: ChatCompletionResponseMessageRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageAssistantContent.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -23,7 +23,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 /// The role of the message sender. Always `assistant`.
 final ChatCompletionResponseMessageRole role;
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageAssistant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessageAssistant(
+RealtimeConversationItemMessageAssistant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, String? type, ComputerToolCallOutputResourceStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessageAssistant(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

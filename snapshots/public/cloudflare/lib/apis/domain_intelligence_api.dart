@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DomainIntelligenceApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/domain_intelligence_get_domain_details_error.dart';import 'package:pub_cloudflare/models/errors/domain_intelligence_get_multiple_domain_details_error.dart';import 'package:pub_cloudflare/models/intel_domain.dart';import 'package:pub_cloudflare/models/intel_identifier.dart';import 'package:pub_cloudflare/models/response_collection24/response_collection24_result.dart';/// DomainIntelligenceApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/domain_intelligence_get_domain_details_error.dart';import 'package:pub_cloudflare/models/errors/domain_intelligence_get_multiple_domain_details_error.dart';import 'package:pub_cloudflare/models/intel_collection_response/intel_collection_response_result.dart';import 'package:pub_cloudflare/models/intel_domain.dart';import 'package:pub_cloudflare/models/intel_identifier.dart';/// DomainIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -45,7 +45,7 @@ return execute(
 /// Same as summary.
 ///
 /// `GET /accounts/{account_id}/intel/domain/bulk`
-Future<ApiResult<List<ResponseCollection24Result>?, DomainIntelligenceGetMultipleDomainDetailsError>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelCollectionResponseResult>, DomainIntelligenceGetMultipleDomainDetailsError>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
 for (final item in domain) {
@@ -68,7 +68,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, greedy: const {1},)).toList();
+    return (json['result'] as List<dynamic>).map((e) => IntelCollectionResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: DomainIntelligenceGetMultipleDomainDetailsError.fromResponse,
 );

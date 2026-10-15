@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItemWithReference
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_with_reference/realtime_conversation_item_with_reference_content.dart';/// The type of the item (`message`, `function_call`, `function_call_output`, `item_reference`).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_with_reference/realtime_conversation_item_with_reference_content.dart';/// The type of the item (`message`, `function_call`, `function_call_output`, `item_reference`).
 /// 
 sealed class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType();
 
@@ -177,7 +177,7 @@ factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json
   id: json['id'] as String?,
   type: json['type'] != null ? RealtimeConversationItemWithReferenceType.fromJson(json['type'] as String) : null,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
   role: json['role'] != null ? RealtimeConversationItemWithReferenceRole.fromJson(json['role'] as String) : null,
   content: (json['content'] as List<dynamic>?)?.map((e) => RealtimeConversationItemWithReferenceContent.fromJson(e as Map<String, dynamic>)).toList(),
   callId: json['call_id'] as String?,
@@ -207,7 +207,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 /// on the conversation, but are accepted for consistency with the
 /// `conversation.item.created` event.
 /// 
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
@@ -254,7 +254,7 @@ Map<String, dynamic> toJson() { return {
   'output': ?output,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key)); } 
-RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) { return RealtimeConversationItemWithReference(
+RealtimeConversationItemWithReference copyWith({String? Function()? id, RealtimeConversationItemWithReferenceType? Function()? type, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputResourceStatus? Function()? status, RealtimeConversationItemWithReferenceRole? Function()? role, List<RealtimeConversationItemWithReferenceContent>? Function()? content, String? Function()? callId, String? Function()? name, String? Function()? arguments, String? Function()? output, }) { return RealtimeConversationItemWithReference(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
   object: object != null ? object() : this.object,

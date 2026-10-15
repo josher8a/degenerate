@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRouteModifiedResponse (inline: Result)
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route.dart';@immutable final class MagicRouteModifiedResponseResult {const MagicRouteModifiedResponseResult({this.modified, this.modifiedRoute, });
+
+factory MagicRouteModifiedResponseResult.fromJson(Map<String, dynamic> json) { return MagicRouteModifiedResponseResult(
+  modified: json['modified'] as bool?,
+  modifiedRoute: json['modified_route'] != null ? MagicRoute.fromJson(json['modified_route'] as Map<String, dynamic>) : null,
+); }
+
+/// Example: `true`
+final bool? modified;
+
+final MagicRoute? modifiedRoute;
+
+Map<String, dynamic> toJson() { return {
+  'modified': ?modified,
+  if (modifiedRoute != null) 'modified_route': modifiedRoute?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_route'}.contains(key)); } 
+MagicRouteModifiedResponseResult copyWith({bool? Function()? modified, MagicRoute? Function()? modifiedRoute, }) { return MagicRouteModifiedResponseResult(
+  modified: modified != null ? modified() : this.modified,
+  modifiedRoute: modifiedRoute != null ? modifiedRoute() : this.modifiedRoute,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is MagicRouteModifiedResponseResult &&
+          modified == other.modified &&
+          modifiedRoute == other.modifiedRoute;
+
+@override int get hashCode => Object.hash(modified, modifiedRoute);
+
+@override String toString() => 'MagicRouteModifiedResponseResult(modified: $modified, modifiedRoute: $modifiedRoute)';
+
+ }

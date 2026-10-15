@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustAccountsApi" (11 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_create_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_delete_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_information_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_create_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_delete_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_device_settings_for_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_get_zero_trust_account_information_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_patch_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_accounts_update_zero_trust_account_configuration_error.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustAccountsApi with ApiExecutor {const ZeroTrustAccountsApi(th
 /// Describes the current device settings for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon31Result, ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountError>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountError>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountError.fromResponse,
 );
@@ -37,7 +37,7 @@ return execute(
 /// Updates the current device settings for a Zero Trust account.
 ///
 /// `PUT /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon31Result, ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountError>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountError>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,7 +52,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountError.fromResponse,
 );
@@ -62,7 +62,7 @@ return execute(
 /// Patches the current device settings for a Zero Trust account.
 ///
 /// `PATCH /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon31Result, ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountError>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountError>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountError.fromResponse,
 );
@@ -87,7 +87,7 @@ return execute(
 /// Resets the current device settings for a Zero Trust account.
 ///
 /// `DELETE /accounts/{account_id}/devices/settings`
-Future<ApiResult<ResponseCommon31Result, ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountError>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountError>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -100,7 +100,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String, greedy: const {0},);
+    return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountError.fromResponse,
 );

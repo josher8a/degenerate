@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafPackagesGetAWafPackageResponse4Xx (inline: ResponseSingle22)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_messages2.dart';import 'package:pub_cloudflare/models/response_single30/response_single30_result.dart';@immutable final class WafPackagesGetAWafPackageResponse4XxResponseSingle22 {const WafPackagesGetAWafPackageResponse4XxResponseSingle22({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_messages2.dart';import 'package:pub_cloudflare/models/response_single22/response_single22_result.dart';@immutable final class WafPackagesGetAWafPackageResponse4XxResponseSingle22 {const WafPackagesGetAWafPackageResponse4XxResponseSingle22({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WafPackagesGetAWafPackageResponse4XxResponseSingle22.fromJson(Map<String, dynamic> json) { return WafPackagesGetAWafPackageResponse4XxResponseSingle22(
   errors: (json['errors'] as List<dynamic>).map((e) => FirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -14,7 +14,7 @@ final List<FirewallMessages2> errors;
 
 final List<FirewallMessages2> messages;
 
-final ResponseSingle30Result? result;
+final ResponseSingle22Result? result;
 
 /// Defines whether the API call was successful.
 /// 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WafPackagesGetAWafPackageResponse4XxResponseSingle22 copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, ResponseSingle30Result? Function()? result, bool? success, }) { return WafPackagesGetAWafPackageResponse4XxResponseSingle22(
+WafPackagesGetAWafPackageResponse4XxResponseSingle22 copyWith({List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, ResponseSingle22Result? Function()? result, bool? success, }) { return WafPackagesGetAWafPackageResponse4XxResponseSingle22(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

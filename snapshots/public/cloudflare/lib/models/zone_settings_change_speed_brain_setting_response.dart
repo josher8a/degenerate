@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZoneSettingsChangeSpeedBrainSettingResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/speed_base.dart';import 'package:pub_cloudflare/models/speed_messages2.dart';@immutable final class ZoneSettingsChangeSpeedBrainSettingResponse {const ZoneSettingsChangeSpeedBrainSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/speed_cloudflare_speed_brain_response.dart';import 'package:pub_cloudflare/models/speed_messages2.dart';@immutable final class ZoneSettingsChangeSpeedBrainSettingResponse {const ZoneSettingsChangeSpeedBrainSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZoneSettingsChangeSpeedBrainSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneSettingsChangeSpeedBrainSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? SpeedBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? SpeedCloudflareSpeedBrainResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SpeedMessages2> errors;
@@ -19,7 +19,7 @@ final List<SpeedMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final SpeedBase? result;
+final SpeedCloudflareSpeedBrainResponse? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ZoneSettingsChangeSpeedBrainSettingResponse copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, SpeedBase? Function()? result, }) { return ZoneSettingsChangeSpeedBrainSettingResponse(
+ZoneSettingsChangeSpeedBrainSettingResponse copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, SpeedCloudflareSpeedBrainResponse? Function()? result, }) { return ZoneSettingsChangeSpeedBrainSettingResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

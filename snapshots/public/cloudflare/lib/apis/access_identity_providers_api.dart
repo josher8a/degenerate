@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessIdentityProvidersApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_provider.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessIdentityProvidersApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -41,7 +41,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -66,7 +66,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -89,7 +89,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
@@ -114,7 +114,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PageRulesApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/page_rules_create_a_page_rule_error.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id3/response_single_id3_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -152,7 +152,7 @@ return execute(
 /// Deletes an existing Page Rule.
 ///
 /// `DELETE /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseSingleId5Result?, PageRulesCreateAPageRuleError>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId3Result?, PageRulesCreateAPageRuleError>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -165,7 +165,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId3Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: PageRulesCreateAPageRuleError.fromResponse,
 );

@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseCommonFailure55
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure55/response_common_failure55_errors.dart';@immutable final class ResponseCommonFailure55 {const ResponseCommonFailure55({this.errors, this.messages, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cancel_build_by_uuid_response/cancel_build_by_uuid_response_errors.dart';@immutable final class ResponseCommonFailure55 {const ResponseCommonFailure55({this.errors, this.messages, this.success, });
 
 factory ResponseCommonFailure55.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55(
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => ResponseCommonFailure55Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => CancelBuildByUuidResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool?,
 ); }
 
-final List<ResponseCommonFailure55Errors>? errors;
+final List<CancelBuildByUuidResponseErrors>? errors;
 
 final List<Map<String,dynamic>>? messages;
 
@@ -28,7 +28,7 @@ if (errors$$ != null) {
   if (errors$$.isEmpty) { errors$.add('errors: must have >= 1 items'); }
 }
 return errors$; } 
-ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
+ResponseCommonFailure55 copyWith({List<CancelBuildByUuidResponseErrors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

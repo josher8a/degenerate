@@ -12,7 +12,6 @@ factory RemoveCacheTagsValues.fromJson(Map<String, dynamic> json) { return Remov
 /// The operation to perform on the cache tags.
 final RulesetsSetCacheTagsOperation operation;
 
-/// A list of cache tag values.
 final List<String> values;
 
 Map<String, dynamic> toJson() { return {

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionToolCallOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/function_and_custom_tool_call_output.dart';/// The output of a function tool call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/function_and_custom_tool_call_output.dart';/// The output of a function tool call.
 /// 
 @immutable final class FunctionToolCallOutput {const FunctionToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.status, });
 
@@ -10,7 +10,7 @@ factory FunctionToolCallOutput.fromJson(Map<String, dynamic> json) { return Func
   type: json['type'] as String,
   callId: json['call_id'] as String,
   output: OneOf2.parse(json['output'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => FunctionAndCustomToolCallOutput.fromJson(e as Map<String, dynamic>)).toList(),),
-  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The unique ID of the function tool call output. Populated when this item
@@ -34,7 +34,7 @@ final CustomToolCallOutputOutput output;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final ComputerToolCallOutputStatus? status;
+final ComputerToolCallOutputResourceStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output'); } 
-FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return FunctionToolCallOutput(
+FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return FunctionToolCallOutput(
   id: id != null ? id() : this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,

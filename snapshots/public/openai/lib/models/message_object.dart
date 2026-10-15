@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_content_refusal_object.dart';import 'package:pub_openai/models/message_content_text_object.dart';import 'package:pub_openai/models/message_object/message_object_content.dart';import 'package:pub_openai/models/message_object/message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output_resource/computer_tool_call_output_resource_status.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_content_refusal_object.dart';import 'package:pub_openai/models/message_content_text_object.dart';import 'package:pub_openai/models/message_object/message_object_content.dart';import 'package:pub_openai/models/message_object/message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
 sealed class MessageObjectObject {const MessageObjectObject();
 
 factory MessageObjectObject.fromJson(String json) { return switch (json) {
@@ -62,7 +62,7 @@ factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject
   object: MessageObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   threadId: json['thread_id'] as String,
-  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
+  status: ComputerToolCallOutputResourceStatus.fromJson(json['status'] as String),
   incompleteDetails: json['incomplete_details'] != null ? MessageObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   incompleteAt: json['incomplete_at'] != null ? (json['incomplete_at'] as num).toInt() : null,
@@ -87,7 +87,7 @@ final int createdAt;
 final String threadId;
 
 /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
-final ComputerToolCallOutputStatus status;
+final ComputerToolCallOutputResourceStatus status;
 
 /// On an incomplete message, details about why the message is incomplete.
 final MessageObjectIncompleteDetails? incompleteDetails;
@@ -145,7 +145,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('run_id') && json['run_id'] is String &&
       json.containsKey('attachments') &&
       json.containsKey('metadata'); } 
-MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, ComputerToolCallOutputStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, CreateMessageRequestRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<Attachments>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return MessageObject(
+MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, ComputerToolCallOutputResourceStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, CreateMessageRequestRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<Attachments>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return MessageObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

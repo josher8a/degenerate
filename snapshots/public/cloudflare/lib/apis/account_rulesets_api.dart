@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccountRulesetsApi" (16 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request.dart';import 'package:pub_cloudflare/models/errors/create_account_ruleset_error.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_account_id.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';import 'package:pub_cloudflare/models/rulesets_per_page.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';import 'package:pub_cloudflare/models/update_account_entrypoint_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_rule_request.dart';/// AccountRulesetsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_response/create_account_ruleset_response_result.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request.dart';import 'package:pub_cloudflare/models/errors/create_account_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/create_account_ruleset_rule_error.dart';import 'package:pub_cloudflare/models/errors/delete_account_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/delete_account_ruleset_rule_error.dart';import 'package:pub_cloudflare/models/errors/delete_account_ruleset_version_error.dart';import 'package:pub_cloudflare/models/errors/get_account_entrypoint_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/get_account_entrypoint_ruleset_version_error.dart';import 'package:pub_cloudflare/models/errors/get_account_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/get_account_ruleset_version_error.dart';import 'package:pub_cloudflare/models/errors/list_account_entrypoint_ruleset_versions_error.dart';import 'package:pub_cloudflare/models/errors/list_account_ruleset_version_rules_by_tag_error.dart';import 'package:pub_cloudflare/models/errors/list_account_ruleset_versions_error.dart';import 'package:pub_cloudflare/models/errors/list_account_rulesets_error.dart';import 'package:pub_cloudflare/models/errors/update_account_entrypoint_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/update_account_ruleset_error.dart';import 'package:pub_cloudflare/models/errors/update_account_ruleset_rule_error.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_account_id.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';import 'package:pub_cloudflare/models/rulesets_per_page.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';import 'package:pub_cloudflare/models/update_account_entrypoint_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_rule_request.dart';/// AccountRulesetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccountRulesetsApi with ApiExecutor {const AccountRulesetsApi(this.a
 /// Fetches all rulesets at the account level.
 ///
 /// `GET /accounts/{account_id}/rulesets`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, CreateAccountRulesetError>> listAccountRulesets({required RulesetsAccountId accountId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListAccountRulesetsError>> listAccountRulesets({required RulesetsAccountId accountId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toJson();
@@ -40,7 +40,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: ListAccountRulesetsError.fromResponse,
 );
  } 
 /// Create an account ruleset
@@ -48,7 +48,7 @@ return execute(
 /// Creates a ruleset at the account level.
 ///
 /// `POST /accounts/{account_id}/rulesets`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> createAccountRuleset({required RulesetsAccountId accountId, required CreateAccountRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, CreateAccountRulesetError>> createAccountRuleset({required RulesetsAccountId accountId, required CreateAccountRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,7 +63,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: CreateAccountRulesetError.fromResponse,
 );
@@ -73,7 +73,7 @@ return execute(
 /// Fetches the latest version of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> getAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetAccountRulesetError>> getAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,9 +86,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: GetAccountRulesetError.fromResponse,
 );
  } 
 /// Update an account ruleset
@@ -96,7 +96,7 @@ return execute(
 /// Updates an account ruleset, creating a new version.
 ///
 /// `PUT /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> updateAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required UpdateAccountRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateAccountRulesetError>> updateAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required UpdateAccountRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,9 +111,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: UpdateAccountRulesetError.fromResponse,
 );
  } 
 /// Delete an account ruleset
@@ -121,7 +121,7 @@ return execute(
 /// Deletes all versions of an existing account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}`
-Future<ApiResult<void, CreateAccountRulesetError>> deleteAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountRulesetError>> deleteAccountRuleset({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -133,7 +133,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: DeleteAccountRulesetError.fromResponse,
 );
  } 
 /// Create an account ruleset rule
@@ -141,7 +141,7 @@ return execute(
 /// Adds a new rule to an account ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.
 ///
 /// `POST /accounts/{account_id}/rulesets/{ruleset_id}/rules`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> createAccountRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required CreateAccountRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, CreateAccountRulesetRuleError>> createAccountRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required CreateAccountRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,9 +156,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: CreateAccountRulesetRuleError.fromResponse,
 );
  } 
 /// Update an account ruleset rule
@@ -166,7 +166,7 @@ return execute(
 /// Updates an existing rule in an account ruleset.
 ///
 /// `PATCH /accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> updateAccountRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required UpdateAccountRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateAccountRulesetRuleError>> updateAccountRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, required UpdateAccountRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -181,9 +181,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: UpdateAccountRulesetRuleError.fromResponse,
 );
  } 
 /// Delete an account ruleset rule
@@ -191,7 +191,7 @@ return execute(
 /// Deletes an existing rule from an account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> deleteAccountRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, DeleteAccountRulesetRuleError>> deleteAccountRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -204,9 +204,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: DeleteAccountRulesetRuleError.fromResponse,
 );
  } 
 /// List an account ruleset's versions
@@ -214,7 +214,7 @@ return execute(
 /// Fetches the versions of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, CreateAccountRulesetError>> listAccountRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListAccountRulesetVersionsError>> listAccountRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -229,7 +229,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: ListAccountRulesetVersionsError.fromResponse,
 );
  } 
 /// Get an account ruleset version
@@ -237,7 +237,7 @@ return execute(
 /// Fetches a specific version of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> getAccountRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetAccountRulesetVersionError>> getAccountRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -250,9 +250,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: GetAccountRulesetVersionError.fromResponse,
 );
  } 
 /// Delete an account ruleset version
@@ -260,7 +260,7 @@ return execute(
 /// Deletes an existing version of an account ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<void, CreateAccountRulesetError>> deleteAccountRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteAccountRulesetVersionError>> deleteAccountRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -272,7 +272,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: DeleteAccountRulesetVersionError.fromResponse,
 );
  } 
 /// List an account ruleset version's rules by tag
@@ -280,7 +280,7 @@ return execute(
 /// Fetches the rules of a managed account ruleset version for a given tag.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> listAccountRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, ListAccountRulesetVersionRulesByTagError>> listAccountRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -293,9 +293,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: ListAccountRulesetVersionRulesByTagError.fromResponse,
 );
  } 
 /// Get an account entry point ruleset
@@ -303,7 +303,7 @@ return execute(
 /// Fetches the latest version of the account entry point ruleset for a given phase.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> getAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetAccountEntrypointRulesetError>> getAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -316,9 +316,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: GetAccountEntrypointRulesetError.fromResponse,
 );
  } 
 /// Update an account entry point ruleset
@@ -326,7 +326,7 @@ return execute(
 /// Updates an account entry point ruleset, creating a new version.
 ///
 /// `PUT /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> updateAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, required UpdateAccountEntrypointRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, UpdateAccountEntrypointRulesetError>> updateAccountEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, required UpdateAccountEntrypointRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -341,9 +341,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: UpdateAccountEntrypointRulesetError.fromResponse,
 );
  } 
 /// List an account entry point ruleset's versions
@@ -351,7 +351,7 @@ return execute(
 /// Fetches the versions of an account entry point ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, CreateAccountRulesetError>> listAccountEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, ListAccountEntrypointRulesetVersionsError>> listAccountEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -366,7 +366,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: ListAccountEntrypointRulesetVersionsError.fromResponse,
 );
  } 
 /// Get an account entry point ruleset version
@@ -374,7 +374,7 @@ return execute(
 /// Fetches a specific version of an account entry point ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}`
-Future<ApiResult<dynamic, CreateAccountRulesetError>> getAccountEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateAccountRulesetResponseResult, GetAccountEntrypointRulesetVersionError>> getAccountEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -387,9 +387,9 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'];
+    return CreateAccountRulesetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: CreateAccountRulesetError.fromResponse,
+  onError: GetAccountEntrypointRulesetVersionError.fromResponse,
 );
  } 
  }

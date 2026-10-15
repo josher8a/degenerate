@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsAnalyticsTableResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_messages2.dart';import 'package:pub_cloudflare/models/dns_analytics_result.dart';@immutable final class DnsAnalyticsTableResponse {const DnsAnalyticsTableResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_messages2.dart';import 'package:pub_cloudflare/models/dns_analytics_report.dart';@immutable final class DnsAnalyticsTableResponse {const DnsAnalyticsTableResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DnsAnalyticsTableResponse.fromJson(Map<String, dynamic> json) { return DnsAnalyticsTableResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsAnalyticsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsAnalyticsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? DnsAnalyticsResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? DnsAnalyticsReport.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<DnsAnalyticsMessages2> errors;
@@ -19,7 +19,7 @@ final List<DnsAnalyticsMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final DnsAnalyticsResult? result;
+final DnsAnalyticsReport? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DnsAnalyticsTableResponse copyWith({List<DnsAnalyticsMessages2>? errors, List<DnsAnalyticsMessages2>? messages, bool? success, DnsAnalyticsResult? Function()? result, }) { return DnsAnalyticsTableResponse(
+DnsAnalyticsTableResponse copyWith({List<DnsAnalyticsMessages2>? errors, List<DnsAnalyticsMessages2>? messages, bool? success, DnsAnalyticsReport? Function()? result, }) { return DnsAnalyticsTableResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

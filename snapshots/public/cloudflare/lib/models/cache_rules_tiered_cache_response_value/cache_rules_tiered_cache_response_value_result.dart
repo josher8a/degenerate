@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CacheRulesTieredCacheResponseValue (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Tiered Cache zone setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_tiered_cache/cache_rules_tiered_cache_id.dart';/// Value of the Tiered Cache zone setting.
 sealed class CacheRulesTieredCacheValue {const CacheRulesTieredCacheValue();
 
 factory CacheRulesTieredCacheValue.fromJson(String json) { return switch (json) {
@@ -69,63 +69,10 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 @override int get hashCode => value.hashCode;
 
  }
-/// ID of the zone setting.
-sealed class CacheRulesTieredCacheResponseValueResultId {const CacheRulesTieredCacheResponseValueResultId();
-
-factory CacheRulesTieredCacheResponseValueResultId.fromJson(String json) { return switch (json) {
-  'tiered_caching' => tieredCaching,
-  _ => CacheRulesTieredCacheResponseValueResultId$Unknown(json),
-}; }
-
-static const CacheRulesTieredCacheResponseValueResultId tieredCaching = CacheRulesTieredCacheResponseValueResultId$tieredCaching._();
-
-static const List<CacheRulesTieredCacheResponseValueResultId> values = [tieredCaching];
-
-String get value;
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'tiered_caching' => 'tieredCaching',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return this is CacheRulesTieredCacheResponseValueResultId$Unknown; } 
-/// Exhaustive match on the enum value.
-W when<W>({required W Function() tieredCaching, required W Function(String value) $unknown, }) { return switch (this) {
-      CacheRulesTieredCacheResponseValueResultId$tieredCaching() => tieredCaching(),
-      CacheRulesTieredCacheResponseValueResultId$Unknown(:final value) => $unknown(value),
-    }; } 
-/// Partial match with a required fallback for unhandled variants.
-W maybeWhen<W>({required W Function(String value) orElse, W Function()? tieredCaching, W Function(String value)? $unknown, }) { return switch (this) {
-      CacheRulesTieredCacheResponseValueResultId$tieredCaching() => tieredCaching != null ? tieredCaching() : orElse(value),
-      CacheRulesTieredCacheResponseValueResultId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
-    }; } 
-@override String toString() => 'CacheRulesTieredCacheResponseValueResultId($value)';
-
- }
-@immutable final class CacheRulesTieredCacheResponseValueResultId$tieredCaching extends CacheRulesTieredCacheResponseValueResultId {const CacheRulesTieredCacheResponseValueResultId$tieredCaching._();
-
-@override String get value => 'tiered_caching';
-
-@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesTieredCacheResponseValueResultId$tieredCaching;
-
-@override int get hashCode => 'tiered_caching'.hashCode;
-
- }
-@immutable final class CacheRulesTieredCacheResponseValueResultId$Unknown extends CacheRulesTieredCacheResponseValueResultId {const CacheRulesTieredCacheResponseValueResultId$Unknown(this.value);
-
-@override final String value;
-
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesTieredCacheResponseValueResultId$Unknown && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
- }
 @immutable final class CacheRulesTieredCacheResponseValueResult {const CacheRulesTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn, });
 
 factory CacheRulesTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesTieredCacheResponseValueResult(
-  id: CacheRulesTieredCacheResponseValueResultId.fromJson(json['id'] as String),
+  id: CacheRulesTieredCacheId.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   value: CacheRulesTieredCacheValue.fromJson(json['value'] as String),
 ); }
@@ -133,7 +80,7 @@ factory CacheRulesTieredCacheResponseValueResult.fromJson(Map<String, dynamic> j
 /// ID of the zone setting.
 /// 
 /// Example: `'tiered_caching'`
-final CacheRulesTieredCacheResponseValueResultId id;
+final CacheRulesTieredCacheId id;
 
 /// Last time this setting was modified.
 /// 
@@ -149,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-CacheRulesTieredCacheResponseValueResult copyWith({CacheRulesTieredCacheResponseValueResultId? id, DateTime? Function()? modifiedOn, CacheRulesTieredCacheValue? value, }) { return CacheRulesTieredCacheResponseValueResult(
+CacheRulesTieredCacheResponseValueResult copyWith({CacheRulesTieredCacheId? id, DateTime? Function()? modifiedOn, CacheRulesTieredCacheValue? value, }) { return CacheRulesTieredCacheResponseValueResult(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value ?? this.value,

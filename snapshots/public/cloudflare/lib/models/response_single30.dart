@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseSingle30
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/response_single30/response_single30_result.dart';@immutable final class ResponseSingle30 {const ResponseSingle30({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/response_single22/response_single22_result.dart';@immutable final class ResponseSingle30 {const ResponseSingle30({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ResponseSingle30.fromJson(Map<String, dynamic> json) { return ResponseSingle30(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -19,7 +19,7 @@ final List<LoadBalancingMessages2> messages;
 /// Example: `true`
 final bool success;
 
-final ResponseSingle30Result result;
+final ResponseSingle22Result result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ResponseSingle30 copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, ResponseSingle30Result? result, }) { return ResponseSingle30(
+ResponseSingle30 copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, ResponseSingle22Result? result, }) { return ResponseSingle30(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

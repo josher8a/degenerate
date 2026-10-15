@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilterDeleteResponseSingle (inline: Result)
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filters_components_schemas_id.dart';@immutable final class FirewallFilterDeleteResponseSingleResult {const FirewallFilterDeleteResponseSingleResult({required this.id});
+
+factory FirewallFilterDeleteResponseSingleResult.fromJson(Map<String, dynamic> json) { return FirewallFilterDeleteResponseSingleResult(
+  id: FirewallFiltersComponentsSchemasId.fromJson(json['id'] as String),
+); }
+
+final FirewallFiltersComponentsSchemasId id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+FirewallFilterDeleteResponseSingleResult copyWith({FirewallFiltersComponentsSchemasId? id}) { return FirewallFilterDeleteResponseSingleResult(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is FirewallFilterDeleteResponseSingleResult &&
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'FirewallFilterDeleteResponseSingleResult(id: $id)';
+
+ }
