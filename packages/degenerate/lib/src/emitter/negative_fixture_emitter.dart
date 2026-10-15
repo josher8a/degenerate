@@ -62,7 +62,9 @@ final class NegativeFixtureEmitter {
       final without = Map.of(validEntries)..remove(target.originalName);
       out.add(_canParseEntry(
         name,
-        'missing required field ${dartStringLiteral(target.originalName)}',
+        target.originalName.rebuild(
+          (n) => 'missing required field ${dartStringLiteral(n)}',
+        ),
         _mapLiteral(without),
         name,
       ));
@@ -74,7 +76,9 @@ final class NegativeFixtureEmitter {
         wrongMap[target.originalName] = wrongValue;
         out.add(_canParseEntry(
           name,
-          'wrong type for ${dartStringLiteral(target.originalName)}',
+          target.originalName.rebuild(
+            (n) => 'wrong type for ${dartStringLiteral(n)}',
+          ),
           _mapLiteral(wrongMap),
           name,
         ));
@@ -123,11 +127,11 @@ final class NegativeFixtureEmitter {
     String typeName,
     IrField field,
     IrConstraints c,
-    Map<String, String> validEntries,
+    Map<SpecString, String> validEntries,
     List<String> out,
   ) {
     final key = field.originalName;
-    void add(String label, String violatingValue) {
+    void add(SpecString label, String violatingValue) {
       final m = Map.of(validEntries);
       m[key] = violatingValue;
       out.add(_validateEntry(
@@ -140,31 +144,31 @@ final class NegativeFixtureEmitter {
 
     if (c.minLength != null && c.minLength! > 0) {
       final short = 'a' * (c.minLength! - 1);
-      add('$key: minLength violation', dartStringLiteral(short));
+      add(key.rebuild((k) => '$k: minLength violation'), dartStringLiteral(short));
     }
     if (c.maxLength != null) {
       final long = 'a' * (c.maxLength! + 1);
-      add('$key: maxLength violation', dartStringLiteral(long));
+      add(key.rebuild((k) => '$k: maxLength violation'), dartStringLiteral(long));
     }
     // pattern — skip: synthesizing a non-matching string is unreliable.
     if (c.minimum != null) {
       final below = c.minimum! - 1;
-      add('$key: below minimum', '$below');
+      add(key.rebuild((k) => '$k: below minimum'), '$below');
     }
     if (c.maximum != null) {
       final above = c.maximum! + 1;
-      add('$key: above maximum', '$above');
+      add(key.rebuild((k) => '$k: above maximum'), '$above');
     }
     if (c.exclusiveMinimum != null) {
-      add('$key: at exclusive minimum', '${c.exclusiveMinimum}');
+      add(key.rebuild((k) => '$k: at exclusive minimum'), '${c.exclusiveMinimum}');
     }
     if (c.exclusiveMaximum != null) {
-      add('$key: at exclusive maximum', '${c.exclusiveMaximum}');
+      add(key.rebuild((k) => '$k: at exclusive maximum'), '${c.exclusiveMaximum}');
     }
     if (c.multipleOf != null) {
       final bad = c.multipleOf! + 1;
       if (bad % c.multipleOf! != 0) {
-        add('$key: not multiple', '$bad');
+        add(key.rebuild((k) => '$k: not multiple'), '$bad');
       }
     }
     if (c.maxItems != null) {
@@ -172,13 +176,13 @@ final class NegativeFixtureEmitter {
       if (element != null) {
         final tooMany =
             List.generate(c.maxItems! + 1, (_) => element).join(', ');
-        add('$key: above maxItems', '[$tooMany]');
+        add(key.rebuild((k) => '$k: above maxItems'), '[$tooMany]');
       }
     }
     if (c.uniqueItems == true) {
       final element = _elementSample(field.type);
       if (element != null) {
-        add('$key: duplicate items', '[$element, $element]');
+        add(key.rebuild((k) => '$k: duplicate items'), '[$element, $element]');
       }
     }
   }
@@ -223,8 +227,8 @@ final class NegativeFixtureEmitter {
     return _mapLiteral(entries);
   }
 
-  Map<String, String>? _validFieldEntries(List<IrField> fields) {
-    final entries = <String, String>{};
+  Map<SpecString, String>? _validFieldEntries(List<IrField> fields) {
+    final entries = <SpecString, String>{};
     for (final f in fields) {
       if (!f.isRequired && !fieldHasDefault(f)) continue;
       final lit = _sampleLiteral(f.type);
@@ -243,29 +247,29 @@ final class NegativeFixtureEmitter {
   // Code generation
   // ---------------------------------------------------------------------------
 
-  String _mapLiteral(Map<String, String> entries) {
+  String _mapLiteral(Map<SpecString, String> entries) {
     if (entries.isEmpty) return '<String, dynamic>{}';
     final pairs =
-        entries.entries.map((e) => '${dartStringLiteral(e.key)}: ${e.value}');
+        entries.entries.map((e) => '${e.key.literal}: ${e.value}');
     return '<String, dynamic>{${pairs.join(', ')}}';
   }
 
   String _canParseEntry(
     String typeName,
-    String label,
+    SpecString label,
     String sample,
     String dartType,
   ) =>
       '  const CanParseFixture(\n'
       "    '${_escapeSingle(typeName)}',\n"
-      '    ${_quotedLabel(label)},\n'
+      '    ${label.literal},\n'
       '    $sample,\n'
       '    $dartType.canParse,\n'
       '  ),';
 
   String _validateEntry(
     String typeName,
-    String label,
+    SpecString label,
     String sample,
     String dartType,
   ) {
@@ -273,7 +277,7 @@ final class NegativeFixtureEmitter {
         _ctx.fromJson(IrTypeRef(dartType), 'json!');
     return '  ValidateFixture(\n'
         "    '${_escapeSingle(typeName)}',\n"
-        '    ${_quotedLabel(label)},\n'
+        '    ${label.literal},\n'
         '    $sample,\n'
         '    (json) => $decode,\n'
         '    (value) => (value! as $dartType).validate(),\n'
@@ -331,16 +335,4 @@ final class NegativeFixtureEmitter {
 
   String _escapeSingle(String s) =>
       s.replaceAll(r'\', r'\\').replaceAll(r'$', r'\$').replaceAll("'", r"\'");
-
-  /// Quote [label] with single quotes when possible; fall back to double quotes
-  /// only when the label contains a single quote (avoids `prefer_single_quotes`
-  /// and `avoid_escaping_inner_quotes` lints simultaneously).
-  String _quotedLabel(String label) {
-    if (!label.contains("'")) {
-      return "'${_escapeSingle(label)}'";
-    }
-    final escaped =
-        label.replaceAll(r'\', r'\\').replaceAll(r'$', r'\$').replaceAll('"', r'\"');
-    return '"$escaped"';
-  }
 }

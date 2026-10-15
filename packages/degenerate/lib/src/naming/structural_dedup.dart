@@ -13,6 +13,12 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// Computes name-independent structural signatures, memoizing per named type
 /// so shared `$ref`s are expanded once rather than re-expanded at every use
 /// site (which would be exponential on ref-heavy specs).
+///
+/// Signatures are hash-consed: each distinct shape body is interned and
+/// referenced by a short id, so a signature's size is proportional to the
+/// type graph rather than its expanded tree. Two shapes share an id exactly
+/// when their bodies (built from child ids) are equal, so equality is the
+/// same as comparing fully expanded signatures.
 final class StructuralSigner {
   /// Creates a signer over [registry] (name → IR type for `$ref` resolution).
   StructuralSigner(this.registry);
@@ -22,6 +28,11 @@ final class StructuralSigner {
 
   final Map<String, String> _cache = {};
   final Set<String> _stack = {};
+  final Map<String, String> _interned = {};
+
+  /// The interned id for a shape [body].
+  String _intern(String body) =>
+      _interned.putIfAbsent(body, () => '#${_interned.length}');
 
   static String _declName(IrType t) => t.emittableName ?? '';
 
@@ -29,6 +40,11 @@ final class StructuralSigner {
   /// recursive shape matches, ignoring all generated names).
   String signatureOf(IrType type) {
     final n = type.isNullable ? '?' : '';
+
+    // A resolvable ref is transparent: it has exactly its target's signature.
+    if (type case IrTypeRef(:final name) when registry[name] != null) {
+      return '${signatureOf(registry[name]!)}$n';
+    }
 
     // Memoize named declarations / resolve refs through the cache so a shape
     // referenced N times is expanded once.
@@ -38,12 +54,12 @@ final class StructuralSigner {
       if (cached != null) return '$cached$n';
       if (_stack.contains(declName)) return '@cyc$n';
       _stack.add(declName);
-      final body = _body(type);
+      final id = _intern(_body(type));
       _stack.remove(declName);
-      _cache[declName] = body;
-      return '$body$n';
+      _cache[declName] = id;
+      return '$id$n';
     }
-    return '${_body(type)}$n';
+    return '${_intern(_body(type))}$n';
   }
 
   /// A stable fingerprint of validation [c] for the structural signature.
@@ -82,7 +98,7 @@ final class StructuralSigner {
           // the default value (drives ctor defaults, required-ness,
           // nullability, and toJson guards).
           buf.write(
-            '${f.originalName}>${f.name}:${f.isRequired ? 1 : 0}'
+            '${f.originalName.literal}>${f.name}:${f.isRequired ? 1 : 0}'
             ':d=${f.defaultValue};${signatureOf(f.type)};',
           );
         }
@@ -93,9 +109,9 @@ final class StructuralSigner {
         return buf.toString();
       case IrDiscriminatedUnion(:final discriminatorProperty, :final mapping):
         final keys = [...mapping.keys]..sort();
-        final buf = StringBuffer('du:$discriminatorProperty{');
+        final buf = StringBuffer('du:${discriminatorProperty.literal}{');
         for (final k in keys) {
-          buf.write('$k=${signatureOf(mapping[k]!)};');
+          buf.write('${k.literal}=${signatureOf(mapping[k]!)};');
         }
         buf.write('}');
         return buf.toString();
@@ -104,9 +120,8 @@ final class StructuralSigner {
       case IrAnyOf(:final variants):
         return 'ao{${[for (final v in variants) signatureOf(v)].join("|")}}';
       case IrTypeRef(:final name):
-        final target = registry[name];
-        if (target == null) return 'ref:$name';
-        return signatureOf(target);
+        // Resolvable refs are handled in [signatureOf].
+        return 'ref:$name';
     }
   }
 }

@@ -510,14 +510,14 @@ final class FileEmitter {
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
-    String? description,
+    SpecString? description,
     EmitContext ctx,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
     final letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
     final docLines = <String>[];
     if (description != null) {
-      docLines.addAll(formatDocComment(description));
+      docLines.addAll(description.docComment);
       docLines.add('///');
     }
     docLines.add('/// Variants:');
@@ -829,7 +829,7 @@ final class FileEmitter {
           final schemesEntries = securitySchemes
               .map(
                 (s) =>
-                    "'${escapeDartString(s.name)}': ${_securitySchemeLiteral(s)}",
+                    '${s.name.literal}: ${_securitySchemeLiteral(s)}',
               )
               .join(', ');
           b.fields.add(
@@ -928,7 +928,7 @@ final class FileEmitter {
     };
     // Only include optional parameters that differ from their defaults.
     final args = <String>[
-      "name: '${escapeDartString(scheme.name)}'",
+      "name: '${scheme.name.escaped}'",
       'type: $type',
     ];
     if (scheme.scheme != null) {
@@ -989,7 +989,7 @@ final class FileEmitter {
           final entries = requirement.schemes.entries
               .map(
                 (entry) =>
-                    "'${escapeDartString(entry.key)}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
+                    "${entry.key.literal}: [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
           return 'const ApiSecurityRequirement({$entries})';
@@ -1024,10 +1024,14 @@ final class FileEmitter {
   }
 
   _HelperMethodInfo? _securityApplyMethod(IrSecurityScheme scheme) {
-    final methodName = 'apply${_securityMethodSuffix(scheme.name)}';
+    final methodName = 'apply${scheme.name.toIdentifier(_securityMethodSuffix)}';
     const configParam = _HelperParam('config', 'ApiConfig');
-    _HelperMethodInfo apiKey(String collection, String? paramName) {
-      final key = _stringOrNull(paramName);
+    // The key the value is sent under: the declared parameter name, else the
+    // scheme key.
+    final key = scheme.parameterName != null
+        ? _stringOrNull(scheme.parameterName)
+        : scheme.name.literal;
+    _HelperMethodInfo apiKey(String collection) {
       return _HelperMethodInfo(
         methodName,
         [configParam, const _HelperParam('value', 'String')],
@@ -1040,13 +1044,10 @@ final class FileEmitter {
     // depth for directly-constructed schemes.
     return switch (scheme.type) {
       'apiKey' => switch (scheme.location) {
-        'header' => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
-        'query' => apiKey(
-          'defaultQueryParameters',
-          scheme.parameterName ?? scheme.name,
-        ),
-        'cookie' => apiKey('defaultCookies', scheme.parameterName ?? scheme.name),
-        _ => apiKey('defaultHeaders', scheme.parameterName ?? scheme.name),
+        'header' => apiKey('defaultHeaders'),
+        'query' => apiKey('defaultQueryParameters'),
+        'cookie' => apiKey('defaultCookies'),
+        _ => apiKey('defaultHeaders'),
       },
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
@@ -1085,7 +1086,7 @@ final class FileEmitter {
     IrSecurityScheme scheme,
   ) {
     final securityClass = '${toTypeName(packageName)}Security';
-    final suffix = _securityMethodSuffix(scheme.name);
+    final suffix = scheme.name.toIdentifier(_securityMethodSuffix);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
     return switch (scheme.type) {

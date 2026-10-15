@@ -98,7 +98,7 @@ final class TypeRefResolver {
         );
       case IrDiscriminatedUnion():
         var changed = false;
-        final newMapping = <String, IrType>{};
+        final newMapping = <SpecString, IrType>{};
         for (final MapEntry(:key, :value) in type.mapping.entries) {
           var resolved = resolveRef(value);
           resolved = _resolveInType(resolved);

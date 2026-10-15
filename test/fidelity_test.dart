@@ -47,7 +47,7 @@ IrType _findType(List<IrType> types, String name) =>
         orElse: () => throw StateError('Type $name not found'));
 
 IrField _findField(IrObject obj, String name) =>
-    obj.fields.firstWhere((f) => f.name == name || f.originalName == name,
+    obj.fields.firstWhere((f) => f.name == name || f.originalName.test((n) => n == name),
         orElse: () => throw StateError('Field $name not found on ${obj.name}'));
 
 void main() {
@@ -106,7 +106,10 @@ void main() {
 
     test('field descriptions are preserved', () {
       expect(_findField(obj, 'reqNonNull').description, isNotNull);
-      expect(_findField(obj, 'reqNullable').description, contains('accepts null'));
+      expect(
+        _findField(obj, 'reqNullable').description!.forDiagnostics,
+        contains('accepts null'),
+      );
     });
   });
 
@@ -233,7 +236,8 @@ void main() {
   group('AllOf composition', () {
     test('ExtendedModel has fields from BaseModel and extension', () {
       final obj = _findType(types, 'ExtendedModel') as IrObject;
-      final fieldNames = obj.fields.map((f) => f.originalName).toSet();
+      final fieldNames =
+          obj.fields.map((f) => f.originalName.forDiagnostics).toSet();
       expect(fieldNames, containsAll(['id', 'name', 'email']));
     });
 
@@ -243,7 +247,7 @@ void main() {
       expect(_findField(obj, 'name').isRequired, isTrue);
       expect(_findField(obj, 'email').isRequired, isTrue);
       // createdAt is in BaseModel but not required
-      final createdAt = obj.fields.where((f) => f.originalName == 'createdAt');
+      final createdAt = obj.fields.where((f) => f.originalName.test((n) => n == 'createdAt'));
       if (createdAt.isNotEmpty) {
         expect(createdAt.first.isRequired, isFalse);
       }
@@ -256,7 +260,8 @@ void main() {
 
     test('NullableComposition has fields from BaseModel', () {
       final obj = _findType(types, 'NullableComposition') as IrObject;
-      final fieldNames = obj.fields.map((f) => f.originalName).toSet();
+      final fieldNames =
+          obj.fields.map((f) => f.originalName.forDiagnostics).toSet();
       expect(fieldNames, contains('id'));
       expect(fieldNames, contains('extra'));
     });
@@ -290,13 +295,19 @@ void main() {
   group('Documented', () {
     test('type description is preserved', () {
       final obj = _findType(types, 'Documented') as IrObject;
-      expect(obj.description, equals('A well-documented type.'));
+      expect(obj.description, equals(const SpecString('A well-documented type.')));
     });
 
     test('field descriptions are preserved', () {
       final obj = _findType(types, 'Documented') as IrObject;
-      expect(_findField(obj, 'field1').description, equals('First field description.'));
-      expect(_findField(obj, 'field2').description, equals('Second field description.'));
+      expect(
+        _findField(obj, 'field1').description,
+        equals(const SpecString('First field description.')),
+      );
+      expect(
+        _findField(obj, 'field2').description,
+        equals(const SpecString('Second field description.')),
+      );
     });
   });
 
@@ -315,7 +326,7 @@ void main() {
 
     test('Metadata has named field alongside overflow', () {
       final obj = _findType(types, 'Metadata') as IrObject;
-      expect(obj.fields.any((f) => f.originalName == 'name'), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == 'name')), isTrue);
     });
 
     test('TypedMap lowers to IrMap (no emittable name, becomes Map<String, T>)', () {
@@ -340,7 +351,7 @@ void main() {
     test(r'SSE endpoint preserves itemSchema with $ref', () {
       final op = findOp('streamEvents');
       final resp = op.responses[200]!;
-      final sse = resp.content['text/event-stream']!;
+      final sse = resp.content[SpecString('text/event-stream')]!;
 
       expect(sse.schema, isNotNull);
       expect(sse.itemSchema, isNotNull,
@@ -353,7 +364,7 @@ void main() {
     test('JSONL endpoint preserves inline itemSchema', () {
       final op = findOp('streamLines');
       final resp = op.responses[200]!;
-      final jsonl = resp.content['application/x-ndjson']!;
+      final jsonl = resp.content[SpecString('application/x-ndjson')]!;
 
       expect(jsonl.itemSchema, isNotNull,
           reason: 'inline itemSchema must survive lowering');
@@ -361,13 +372,13 @@ void main() {
       final obj = item is IrTypeRef
           ? irMapper.typeRegistry[item.name]! as IrObject
           : item as IrObject;
-      expect(obj.fields.any((f) => f.originalName == 'seq'), isTrue);
-      expect(obj.fields.any((f) => f.originalName == 'data'), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == 'seq')), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == 'data')), isTrue);
     });
 
     test('itemSchema survives ref resolution', () {
       final op = findOp('streamEvents');
-      final sse = op.responses[200]!.content['text/event-stream']!;
+      final sse = op.responses[200]!.content[SpecString('text/event-stream')]!;
       expect(sse.itemSchema, isNotNull,
           reason: 'itemSchema must not be dropped by TypeRefResolver');
       expect((sse.itemSchema! as IrTypeRef).name, equals('BasicObject'));
@@ -406,10 +417,10 @@ void main() {
     test('fields with quotes, dollars, and backslashes survive lowering', () {
       final obj = _findType(types, 'AdversarialKeys') as IrObject;
       expect(obj.fields.length, equals(4));
-      expect(obj.fields.any((f) => f.originalName == "it's"), isTrue);
-      expect(obj.fields.any((f) => f.originalName == 'key"with"quotes'), isTrue);
-      expect(obj.fields.any((f) => f.originalName == r'$dollar'), isTrue);
-      expect(obj.fields.any((f) => f.originalName == r'back\slash'), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == "it's")), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == 'key"with"quotes')), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == r'$dollar')), isTrue);
+      expect(obj.fields.any((f) => f.originalName.test((n) => n == r'back\slash')), isTrue);
     });
   });
 }

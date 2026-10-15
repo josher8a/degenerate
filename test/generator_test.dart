@@ -1,11 +1,39 @@
 import 'dart:io';
 
 import 'package:degenerate/src/generator.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
 
 void main() {
+  group('checkNoSpecTextLeaks', () {
+    test('rejects a file carrying an un-gated SpecString', () {
+      const leaked = SpecString("ev'il");
+      expect(
+        () => checkNoSpecTextLeaks({
+          'lib/ok.dart': "const a = 'fine';",
+          'lib/fixtures.dart': "const label = '$leaked';",
+        }),
+        throwsA(
+          isA<StateError>().having(
+            (e) => e.message,
+            'message',
+            allOf(contains('lib/fixtures.dart'), contains('Near:')),
+          ),
+        ),
+      );
+    });
+
+    test('accepts files whose spec text went through gates', () {
+      const gated = SpecString("ev'il");
+      expect(
+        () => checkNoSpecTextLeaks({'lib/a.dart': 'const label = ${gated.literal};'}),
+        returnsNormally,
+      );
+    });
+  });
+
   group('Generator end-to-end', () {
     late Directory tempDir;
 

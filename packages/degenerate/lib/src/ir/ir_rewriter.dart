@@ -89,7 +89,7 @@ IrType rewriteTypeNames(IrType type, String Function(String) rename) {
     case IrDiscriminatedUnion():
       final newName = rename(type.name);
       var changed = newName != type.name;
-      final newMapping = <String, IrType>{};
+      final newMapping = <SpecString, IrType>{};
       for (final e in type.mapping.entries) {
         final newValue = rewriteTypeNames(e.value, rename);
         if (!identical(newValue, e.value)) changed = true;

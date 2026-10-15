@@ -225,10 +225,10 @@ NameResolution resolveNames({
       final pairs =
           [
               for (final e in t.mapping.entries)
-                '${e.key}=${variantIdentity(e.value)}',
+                '${e.key.literal}=${variantIdentity(e.value)}',
             ]
             ..sort();
-      return 'du:${t.discriminatorProperty}{${pairs.join('|')}} ${leafOf(n)}';
+      return 'du:${t.discriminatorProperty.literal}{${pairs.join('|')}} ${leafOf(n)}';
     }
     final parts = unionVariants(t).map(variantIdentity);
     return '${t.runtimeType}(${parts.join('|')}) ${leafOf(n)}';

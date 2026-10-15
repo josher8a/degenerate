@@ -215,6 +215,7 @@ final class Generator {
       unionMeta,
     );
 
+    checkNoSpecTextLeaks(files);
     return _writeFiles(files, outputDir);
   }
 
@@ -391,7 +392,7 @@ final class Generator {
       final filtered = <IrApi>[];
       for (final api in apis) {
         final ops = api.operations.where((op) {
-          return config.paths.any((prefix) => op.path.startsWith(prefix));
+          return config.paths.any((prefix) => op.path.test((s) => s.startsWith(prefix)));
         }).toList();
         if (ops.isNotEmpty) {
           filtered.add(IrApi(api.name, ops));
@@ -461,8 +462,11 @@ final class Generator {
             final p = op.parameters[i];
             if (p.location == ParameterLocation.header &&
                 p.isRequired &&
-                (securityHeaderNames.contains(p.name) ||
-                    optionalHeaderNames.contains(p.name.toLowerCase()))) {
+                p.name.test(
+                  (n) =>
+                      securityHeaderNames.contains(n) ||
+                      optionalHeaderNames.contains(n.toLowerCase()),
+                )) {
               op.parameters[i] = p.asOptional();
             }
           }
@@ -619,7 +623,7 @@ final class Generator {
       }
       schemes.add(
         IrSecurityScheme(
-          name: key,
+          name: SpecString(key),
           type: type,
           scheme: value['scheme'] as String?,
           bearerFormat: value['bearerFormat'] as String?,
@@ -638,9 +642,9 @@ final class Generator {
   ) {
     if (raw == null) return null;
     return raw.map((requirement) {
-      final schemes = <String, List<String>>{};
+      final schemes = <SpecString, List<String>>{};
       for (final MapEntry(:key, :value) in requirement.entries) {
-        schemes[key] = value is List
+        schemes[SpecString(key)] = value is List
             ? value.map((e) => e.toString()).toList()
             : const <String>[];
       }
@@ -762,7 +766,7 @@ final class Generator {
         .toSet();
 
     // Collect unique path param names that are plain strings.
-    final paramNames = <String>{};
+    final paramNames = <SpecString>{};
     for (final api in irApis) {
       for (final op in api.operations) {
         for (final p in op.parameters) {
@@ -777,14 +781,14 @@ final class Generator {
     if (paramNames.isEmpty) return;
 
     // Generate extension types and build a name mapping.
-    final paramToType = <String, String>{};
+    final paramToType = <SpecString, String>{};
     for (final paramName in paramNames) {
-      var typeName = toTypeName(paramName);
+      var typeName = paramName.toIdentifier(toTypeName);
       if (existingNames.contains(typeName)) {
         typeName = '${typeName}Param';
       }
       if (!existingNames.add(typeName)) {
-        _log('  Warning: typed param "$paramName" skipped '
+        _log('  Warning: typed param "${paramName.forDiagnostics}" skipped '
             '("$typeName" name collision)');
         continue;
       }
@@ -856,4 +860,23 @@ final class GeneratorException implements Exception {
 
   @override
   String toString() => 'GeneratorException: $message';
+}
+
+/// Throws if any generated file still carries a [SpecString] leak sentinel.
+///
+/// `emitRaw` asserts the same for code_builder output, but some files (round-
+/// trip and negative fixtures, barrels) are assembled as plain strings. This
+/// covers every file, in release builds too: a sentinel means spec text was
+/// interpolated without an escape gate, so the file is corrupt.
+void checkNoSpecTextLeaks(Map<String, String> files) {
+  for (final MapEntry(:key, :value) in files.entries) {
+    if (SpecString.containsMarker(value)) {
+      throw StateError(
+        'Un-gated spec text reached generated file $key: a SpecString was '
+        'interpolated directly instead of through a gate '
+        '(.literal/.escaped/.docComment/.commentText/.interpolatedLiteral). '
+        'Near: ${SpecString.leakContext(value)}',
+      );
+    }
+  }
 }

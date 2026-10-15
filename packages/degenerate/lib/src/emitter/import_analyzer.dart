@@ -55,7 +55,7 @@ analyzeApiImports(
     if (obj == null) return type;
     for (final fieldName in unwrapFields) {
       for (final f in obj.fields) {
-        if (f.originalName == fieldName) return f.type;
+        if (f.originalName.test((n) => n == fieldName)) return f.type;
       }
     }
     return type;
@@ -83,7 +83,7 @@ analyzeApiImports(
     }
     if (op.requestBody case final body? when body.content.isNotEmpty) {
       final bodyContent = preferredContent(body.content)!;
-      if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
+      if (bodyContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
       final schema = bodyContent.$2.schema;
       _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
@@ -101,7 +101,7 @@ analyzeApiImports(
     for (final code in successCodes) {
       if (op.responses[code] case final resp?) {
         if (preferredContent(resp.content) case final content?) {
-          if (isJsonLikeMediaType(content.$1)) needsConvert = true;
+          if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
           final schema = maybeUnwrap(content.$2.schema);
           _collectTopLevelTypeName(schema, names, ctx);
           if (isBytesType(schema)) needsTypedData = true;
@@ -121,7 +121,7 @@ analyzeApiImports(
       final errorClassName = errorUnion.resolvedClassName;
       names.add(errorClassName);
     } else {
-      (String, IrMediaType)? errorContent;
+      (SpecString, IrMediaType)? errorContent;
       if (op.defaultResponse case final defaultResp?) {
         errorContent = preferredContent(defaultResp.content);
       }
@@ -136,7 +136,7 @@ analyzeApiImports(
         }
       }
       if (errorContent != null) {
-        if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
+        if (errorContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
         _collectTopLevelTypeName(errorContent.$2.schema, names, ctx);
       }
     }
@@ -325,7 +325,8 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
             final resolved = info.resolvedType as IrObject;
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
-                if (info.discDefault == key || info.payloadFields.isEmpty) {
+                if (key.test((k) => k == info.discDefault) ||
+                    info.payloadFields.isEmpty) {
                   continue;
                 }
               }

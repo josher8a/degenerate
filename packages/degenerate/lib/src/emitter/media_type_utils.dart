@@ -21,24 +21,26 @@ bool isJsonLikeMediaType(String mediaType) {
 ///
 /// Preference order: JSON > text/plain > multipart/form-data >
 /// form-urlencoded > application/octet-stream > first entry.
-(String, IrMediaType)? preferredContent(Map<String, IrMediaType> content) {
+(SpecString, IrMediaType)? preferredContent(
+  Map<SpecString, IrMediaType> content,
+) {
   if (content.isEmpty) return null;
   for (final MapEntry(:key, :value) in content.entries) {
-    if (isJsonLikeMediaType(key)) return (key, value);
+    if (key.test(isJsonLikeMediaType)) return (key, value);
   }
   for (final MapEntry(:key, :value) in content.entries) {
-    if (normalizeMediaType(key) == _textPlainMediaType) {
+    if (key.test((k) => normalizeMediaType(k) == _textPlainMediaType)) {
       return (key, value);
     }
   }
   for (final MapEntry(:key, :value) in content.entries) {
-    if (isMultipartMediaType(key)) return (key, value);
+    if (key.test(isMultipartMediaType)) return (key, value);
   }
   for (final MapEntry(:key, :value) in content.entries) {
-    if (isFormUrlencodedMediaType(key)) return (key, value);
+    if (key.test(isFormUrlencodedMediaType)) return (key, value);
   }
   for (final MapEntry(:key, :value) in content.entries) {
-    if (_isOctetStreamMediaType(key)) return (key, value);
+    if (key.test(_isOctetStreamMediaType)) return (key, value);
   }
   final first = content.entries.first;
   return (first.key, first.value);
@@ -82,14 +84,14 @@ enum StreamKind {
 }
 
 /// Find any streaming response content (SSE or JSONL) for an operation.
-(String, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
+(SpecString, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
   for (final MapEntry(:key, :value) in op.responses.entries) {
     if ((key >= 200 && key < 300) || key == kStatusRange2xx) {
       for (final MapEntry(key: contentKey, value: contentValue) in value.content.entries) {
-        if (_isEventStreamMediaType(contentKey)) {
+        if (contentKey.test(_isEventStreamMediaType)) {
           return (contentKey, contentValue, StreamKind.sse);
         }
-        if (_isJsonlMediaType(contentKey)) {
+        if (contentKey.test(_isJsonlMediaType)) {
           return (contentKey, contentValue, StreamKind.jsonl);
         }
       }

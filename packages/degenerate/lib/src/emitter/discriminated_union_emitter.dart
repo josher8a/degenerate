@@ -19,10 +19,11 @@ final class DiscriminatedUnionEmitter {
   final EmitContext ctx;
 
   /// The Dart getter name for the discriminator property.
-  String get _discDartName => toCamelCase(union.discriminatorProperty);
+  String get _discDartName =>
+      union.discriminatorProperty.toIdentifier(toCamelCase);
 
   /// The original JSON key for the discriminator property.
-  String get _discJsonKey => union.discriminatorProperty;
+  SpecString get _discJsonKey => union.discriminatorProperty;
 
   /// The resolved Dart type for the discriminator getter. When every variant
   /// declares the discriminator field as the same enum or extension type, the
@@ -40,9 +41,11 @@ final class DiscriminatedUnionEmitter {
   /// enum under the natural name, the names no longer compare equal, so the
   /// getter reuses the spec enum instead of re-declaring it.
   String get _syntheticDiscEnumName {
-    final natural = '${union.name}${toPascalCase(union.discriminatorProperty)}';
+    final natural = union.discriminatorProperty.toIdentifier(
+      (p) => '${union.name}${toPascalCase(p)}',
+    );
     final variantNames = union.mapping.keys.map(
-      (k) => variantClassName(union.name, k),
+      (k) => k.toIdentifier((v) => variantClassName(union.name, v)),
     );
     if (variantNames.contains(natural) ||
         ctx.typeRegistry.containsKey(natural)) {
@@ -226,52 +229,54 @@ final class DiscriminatedUnionEmitter {
 
   /// Class name for a variant, disambiguated when it would collide with an
   /// existing schema.
-  String _variantClassName(String discValue) {
-    final name = variantClassName(union.name, discValue);
+  String _variantClassName(SpecString discValue) {
+    final name = discValue.toIdentifier((v) => variantClassName(union.name, v));
     return ctx.typeRegistry.containsKey(name) ? '$name\$Variant' : name;
   }
 
   /// Named-constructor name for a variant (e.g. `INDIVIDUAL` → `individual`).
-  String _variantCtorName(String discValue) {
-    final camel = toCamelCase(discValue);
-    return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
-  }
+  String _variantCtorName(SpecString discValue) =>
+      discValue.toIdentifier((v) {
+        final camel = toCamelCase(v);
+        return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
+      });
 
   /// Look up the [VariantInfo] for a discriminator value, falling back to
   /// an unresolved default when metadata is absent.
-  VariantInfo _variantInfo(String discValue) =>
+  VariantInfo _variantInfo(SpecString discValue) =>
       _meta.variants[discValue] ??
       VariantInfo(
         resolvedType: union.mapping[discValue] ?? const IrTypeRef(''),
         isSpreadable: false,
       );
 
-  List<IrField> _variantPayloadFields(String discValue) =>
+  List<IrField> _variantPayloadFields(SpecString discValue) =>
       _variantInfo(discValue).payloadFields;
 
   /// The Dart expression for the discriminator value on the union's getter.
   /// Always returns the union-level disc type (synthetic or spec-defined).
-  String _discValueExpr(String discValue) {
+  String _discValueExpr(SpecString discValue) {
     final typeName = _discTypeName;
-    return '$typeName.fromJson(${dartStringLiteral(discValue)})';
+    return '$typeName.fromJson(${discValue.literal})';
   }
 
   /// The Dart expression for the discriminator value in the payload's native
   /// type. Used when constructing the inner payload object, whose disc field
   /// may be a plain `String`, an enum, or an extension type.
-  String _rawDiscValueExpr(String discValue) {
+  String _rawDiscValueExpr(SpecString discValue) {
     final discFieldType = _variantInfo(discValue).discFieldType;
-    if (discFieldType == null) return dartStringLiteral(discValue);
+    if (discFieldType == null) return discValue.literal;
     final t = ctx.resolve(discFieldType);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
-        '$name.fromJson(${dartStringLiteral(discValue)})',
+        '$name.fromJson(${discValue.literal})',
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
-        '$name.fromJson(${dartStringLiteral(discValue)})',
-      _ when isNonStringPrimitiveDisc(t) => discValue,
-      _ => dartStringLiteral(discValue),
+        '$name.fromJson(${discValue.literal})',
+      _ when isNonStringPrimitiveDisc(t) =>
+        discValue.scalarLiteral ?? discValue.literal,
+      _ => discValue.literal,
     };
   }
 
@@ -290,7 +295,7 @@ final class DiscriminatedUnionEmitter {
   Method _buildRefVariantCopyWith(
     String className,
     String fieldName,
-    String discValue,
+    SpecString discValue,
     IrType type,
   ) {
     final payloadFields = _variantPayloadFields(discValue);
@@ -327,7 +332,7 @@ final class DiscriminatedUnionEmitter {
     );
   }
 
-  Constructor? _buildVariantFactory(String discValue, IrType variantType) {
+  Constructor? _buildVariantFactory(SpecString discValue, IrType variantType) {
     final info = _variantInfo(discValue);
     final fields = info.payloadFields;
     if (fields.isEmpty && variantType is! IrObject) return null;
@@ -339,7 +344,7 @@ final class DiscriminatedUnionEmitter {
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
       final discArg = info.discFieldType != null &&
-              info.discDefault != discValue
+              !discValue.test((v) => v == info.discDefault)
           ? '$_discDartName: ${_rawDiscValueExpr(discValue)}'
           : null;
       final parts = [
@@ -355,7 +360,7 @@ final class DiscriminatedUnionEmitter {
       (c) => c
         ..name = _variantCtorName(discValue)
         ..factory = true
-        ..docs.add('/// Build the `$discValue` variant.')
+        ..docs.add('/// Build the `${discValue.commentText}` variant.')
         ..optionalParameters.addAll(
           (fields.toList()..sort((a, b) {
             final aReq = fieldIsRequiredInCtor(a) ? 0 : 1;
@@ -383,7 +388,7 @@ final class DiscriminatedUnionEmitter {
     final cases = union.mapping.entries
         .map((e) {
           final className = _variantClassName(e.key);
-          return '  ${dartStringLiteral(e.key)} => $className.fromJson(json),';
+          return '  ${e.key.literal} => $className.fromJson(json),';
         })
         .join('\n');
 
@@ -399,10 +404,10 @@ final class DiscriminatedUnionEmitter {
           ),
         )
         ..docs.add(
-          '/// Deserialize from JSON, dispatching on the `$_discJsonKey` discriminator.',
+          '/// Deserialize from JSON, dispatching on the `${_discJsonKey.commentText}` discriminator.',
         )
         ..body = Code(
-          'return switch (json[${dartStringLiteral(_discJsonKey)}]) {\n'
+          'return switch (json[${_discJsonKey.literal}]) {\n'
           '$cases\n'
           '  _ => $unknownClassName(json),\n'
           '};',
@@ -448,7 +453,7 @@ final class DiscriminatedUnionEmitter {
           Method(
             (m) {
               final body =
-                  "$_discTypeName.fromJson(json[${dartStringLiteral(_discJsonKey)}] as String? ?? '')";
+                  "$_discTypeName.fromJson(json[${_discJsonKey.literal}] as String? ?? '')";
               m
                 ..name = _discDartName
                 ..type = MethodType.getter
@@ -492,7 +497,7 @@ final class DiscriminatedUnionEmitter {
       ..modifier = FieldModifier.final$
       ..type = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..assignment = Code(
-        ctx.fromJson(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
+        ctx.fromJson(f.type, 'json[${f.originalName.literal}]', isOptional: !f.isRequired),
       ),
   );
 
@@ -506,7 +511,7 @@ final class DiscriminatedUnionEmitter {
       ..body = Code('_${f.name}'),
   );
 
-  List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
+  List<Spec> _buildVariant(SpecString discriminatorValue, IrType variantType) {
     final className = _variantClassName(discriminatorValue);
     if (variantType is IrObject) {
       return [_buildObjectVariant(className, discriminatorValue, variantType)];
@@ -514,7 +519,7 @@ final class DiscriminatedUnionEmitter {
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
-  Class _buildObjectVariant(String className, String discValue, IrObject obj) {
+  Class _buildObjectVariant(String className, SpecString discValue, IrObject obj) {
     final fields = obj.fields
         .where((f) => f.originalName != _discJsonKey)
         .toList();
@@ -544,7 +549,7 @@ final class DiscriminatedUnionEmitter {
 
     final fromJsonArgs = fields
         .map((f) {
-          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
+          final accessor = 'json[${f.originalName.literal}]';
           final isOptional = fieldIsNullableInDart(f);
           return '  ${f.name}: ${ctx.fromJson(f.type, accessor, isOptional: isOptional)},';
         })
@@ -552,9 +557,9 @@ final class DiscriminatedUnionEmitter {
 
     final discToJson = '$_discDartName.toJson()';
     final toJsonEntries = <String>[
-      '  ${dartStringLiteral(_discJsonKey)}: $discToJson,',
+      '  ${_discJsonKey.literal}: $discToJson,',
       ...fields.map(
-        (f) => toJsonEntry(f, dartStringLiteral(f.originalName), isNullable: fieldIsNullableInDart(f)),
+        (f) => toJsonEntry(f, f.originalName.literal, isNullable: fieldIsNullableInDart(f)),
       ),
     ];
 
@@ -644,19 +649,19 @@ final class DiscriminatedUnionEmitter {
   }
 
   String _refVariantToJsonBody(
-    String discValue,
+    SpecString discValue,
     IrType type,
     String fieldName,
   ) {
     final toJsonExpr = buildToJsonCode(type, fieldName);
     final discToJson = '$_discDartName.toJson()';
     if (_variantInfo(discValue).isSpreadable) {
-      return '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $discToJson}';
+      return '{...$toJsonExpr, ${_discJsonKey.literal}: $discToJson}';
     }
-    return '{${dartStringLiteral(_discJsonKey)}: $discToJson, ${dartStringLiteral('data')}: $toJsonExpr}';
+    return '{${_discJsonKey.literal}: $discToJson, ${dartStringLiteral('data')}: $toJsonExpr}';
   }
 
-  Class _buildRefVariant(String className, String discValue, IrType type) {
+  Class _buildRefVariant(String className, SpecString discValue, IrType type) {
     final typeName = irTypeName(type);
     final safeType = safeTypeName(typeName);
     final fieldName = sanitizeFieldName(toCamelCase(safeType));
@@ -777,7 +782,7 @@ final class DiscriminatedUnionEmitter {
     final valuesList = <String>[];
 
     for (final dv in discValues) {
-      final subclassName = '$enumName\$${toCamelCase(dv)}';
+      final subclassName = dv.toIdentifier((v) => '$enumName\$${toCamelCase(v)}');
       // Escape names that collide with the enum's own API surface — a static
       // const `json` would be shadowed by the `fromJson(String json)`
       // parameter, and `value`/`values` collide with members.
@@ -793,7 +798,7 @@ final class DiscriminatedUnionEmitter {
           ..type = refer(enumName)
           ..assignment = Code('$subclassName._()'),
       ));
-      fromJsonCases.add('  ${dartStringLiteral(dv)} => $fieldName,');
+      fromJsonCases.add('  ${dv.literal} => $fieldName,');
       valuesList.add(fieldName);
     }
 
@@ -852,7 +857,7 @@ final class DiscriminatedUnionEmitter {
 
     // Known subclasses
     for (final dv in discValues) {
-      final subclassName = '$enumName\$${toCamelCase(dv)}';
+      final subclassName = dv.toIdentifier((v) => '$enumName\$${toCamelCase(v)}');
       specs.add(Class(
         (b) => b
           ..name = subclassName
@@ -871,16 +876,16 @@ final class DiscriminatedUnionEmitter {
               ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code(dartStringLiteral(dv)),
+              ..body = Code(dv.literal),
           ))
           ..methods.add(buildEqualsOverride(
             'identical(this, other) || other is $subclassName',
           ))
           ..methods.add(
-            buildHashCodeOverride('${dartStringLiteral(dv)}.hashCode'),
+            buildHashCodeOverride('${dv.literal}.hashCode'),
           )
           ..methods.add(buildToStringOverride(
-            "'${escapeNameForString(enumName)}(${escapeDartString(dv)})'",
+            "'${escapeNameForString(enumName)}(${dv.escaped})'",
           )),
       ));
     }

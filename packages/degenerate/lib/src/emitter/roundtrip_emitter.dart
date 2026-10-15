@@ -65,7 +65,12 @@ final class RoundtripEmitter {
           }
           any = true;
           fixtures.add(
-            _fixture('$name [${entry.key}]', sample, decode, encode),
+            _fixture(
+                '${_escapeName(name)} [${entry.key.escaped}]',
+                sample,
+                decode,
+                encode,
+              ),
           );
         }
         if (!any) skippedOther++;
@@ -87,7 +92,7 @@ final class RoundtripEmitter {
           final sample = _sampleLiteral(unionVariants[k], {});
           if (sample == null) continue;
           any = true;
-          fixtures.add(_fixture('$name [$k]', sample, decode, encode));
+          fixtures.add(_fixture(_escapeName('$name [$k]'), sample, decode, encode));
         }
         if (!any) skippedOther++;
         continue;
@@ -114,7 +119,12 @@ final class RoundtripEmitter {
                 _overlap.resolve(unionVariants[k]).emittableName ?? 'variant $k';
             any = true;
             fixtures.add(
-              _fixture('$name [$variantLabel]', sample, decode, encode),
+              _fixture(
+                _escapeName('$name [$variantLabel]'),
+                sample,
+                decode,
+                encode,
+              ),
             );
           }
           if (!any) skippedUnion++;
@@ -139,7 +149,7 @@ final class RoundtripEmitter {
 
       final decode = _ctx.fromJson(type, 'json!');
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
-      fixtures.add(_fixture(name, sample, decode, encode));
+      fixtures.add(_fixture(_escapeName(name), sample, decode, encode));
     }
 
     return (fixtures: fixtures, skippedUnion: skippedUnion, skippedOther: skippedOther);
@@ -199,9 +209,17 @@ final class RoundtripEmitter {
   }
 
   /// One `RoundtripFixture(...)` entry literal.
-  String _fixture(String label, String sample, String decode, String encode) =>
+  /// [escapedLabel] is already escaped for a single-quoted literal: callers
+  /// combine an escaped type name with escaped spec text (a discriminator
+  /// value), which must not be escaped twice.
+  String _fixture(
+    String escapedLabel,
+    String sample,
+    String decode,
+    String encode,
+  ) =>
       '  RoundtripFixture(\n'
-      "    '${_escapeName(label)}',\n"
+      "    '$escapedLabel',\n"
       '    $sample,\n'
       '    (json) => $decode,\n'
       '    (value) => $encode,\n'
@@ -446,7 +464,7 @@ final class RoundtripEmitter {
   /// unsynthesizable field.
   String? _discriminatedVariantSample(
     IrDiscriminatedUnion union,
-    MapEntry<String, IrType> entry,
+    MapEntry<SpecString, IrType> entry,
     Set<String> visited,
   ) {
     final discValue = entry.key;
@@ -462,7 +480,7 @@ final class RoundtripEmitter {
     if (entries == null) return null;
     entries.insert(
       0,
-      '${dartStringLiteral(union.discriminatorProperty)}: '
+      '${union.discriminatorProperty.literal}: '
       '${_discWireValue(variant, union.discriminatorProperty, discValue)}',
     );
     return '{${entries.join(', ')}}';
@@ -472,7 +490,11 @@ final class RoundtripEmitter {
   /// field needs a bare literal (`false`, `2`); everything else (plain string,
   /// enum-over-string, extension-type-over-string, or absent) is a string —
   /// mirroring the variant payload's own discriminator field type.
-  String _discWireValue(IrObject variant, String discProp, String discValue) {
+  String _discWireValue(
+    IrObject variant,
+    SpecString discProp,
+    SpecString discValue,
+  ) {
     IrType? t;
     for (final f in variant.fields) {
       if (f.originalName == discProp) {
@@ -482,8 +504,8 @@ final class RoundtripEmitter {
     }
     t = t?.resolveRef(_registry);
     return t != null && isNonStringPrimitiveDisc(t)
-        ? discValue
-        : dartStringLiteral(discValue);
+        ? discValue.scalarLiteral ?? discValue.literal
+        : discValue.literal;
   }
 
   /// Build `'key': <literal>` entries for the always-emitted fields, skipping
@@ -492,7 +514,7 @@ final class RoundtripEmitter {
   List<String>? _fieldEntries(
     List<IrField> fields,
     Set<String> visited, {
-    required String? skipKey,
+    required SpecString? skipKey,
   }) {
     final entries = <String>[];
     for (final f in fields) {
@@ -502,7 +524,7 @@ final class RoundtripEmitter {
       if (!f.isRequired && !fieldHasDefault(f)) continue;
       final lit = _sampleLiteral(f.type, visited);
       if (lit == null) return null;
-      entries.add('${dartStringLiteral(f.originalName)}: $lit');
+      entries.add('${f.originalName.literal}: $lit');
     }
     return entries;
   }

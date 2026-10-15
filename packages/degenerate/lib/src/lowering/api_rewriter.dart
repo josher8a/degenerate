@@ -101,12 +101,12 @@ List<IrApi> resolveApiTypeRefs(
   }).toList();
 }
 
-(Map<String, IrMediaType>, bool) _resolveContentMap(
+(Map<SpecString, IrMediaType>, bool) _resolveContentMap(
   TypeRefResolver resolver,
-  Map<String, IrMediaType> content,
+  Map<SpecString, IrMediaType> content,
 ) {
   var changed = false;
-  final result = <String, IrMediaType>{};
+  final result = <SpecString, IrMediaType>{};
   for (final MapEntry(:key, :value) in content.entries) {
     final resolved = resolver.resolve(value.schema);
     final resolvedItem =

@@ -21,5 +21,5 @@ final class EmitContext {
   /// by owning type name. Produced by `analyzeConstDiscriminators` before
   /// emission begins. Empty means no field is pinned, which is the correct
   /// default: a pin is only ever needed to separate sibling union variants.
-  final Map<String, Set<String>> constDiscriminators;
+  final Map<String, Set<SpecString>> constDiscriminators;
 }
