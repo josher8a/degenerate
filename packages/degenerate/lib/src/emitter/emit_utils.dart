@@ -520,7 +520,12 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 /// Strip angle brackets, commas, and whitespace from type names to produce
 /// a safe Dart identifier fragment.
-String safeTypeName(String name) => name.replaceAll(_typeNameUnsafe, '');
+///
+/// Item nullability renders as `OrNull` (`List<String?>` →
+/// `ListStringOrNull`) rather than being stripped, so a union over both
+/// `List<String>` and `List<String?>` gets distinct variant class names.
+String safeTypeName(String name) =>
+    name.replaceAll('?', 'OrNull').replaceAll(_typeNameUnsafe, '');
 
 /// Whether a named union should become a `typedef` (eligible for OneOf and
 /// not self-referencing through its variants).
